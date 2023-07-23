@@ -1,0 +1,4 @@
+C:\Windows\system32\wsl.exe --distribution Debian --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage && /usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G 'CodeBlocks - Unix Makefiles' -S /mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad -B /mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage

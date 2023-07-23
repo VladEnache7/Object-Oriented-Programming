@@ -1,0 +1,614 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/UserInterface.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/UserInterface.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/UserInterface.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <stdio.h>
+        -:    3:#include <string.h>
+        -:    4:#include <limits.h>
+        -:    5:#include "UserInterface.h"
+        -:    6:
+function create_user_interface called 1 returned 100% blocks executed 100%
+        1:    7:UserInterface *create_user_interface() {
+        1:    8:    Service *service = create_service();
+        1:    8-block  0
+call    0 returned 1
+        1:    9:    UserInterface *user_interface = (UserInterface *) malloc(sizeof(UserInterface));
+        1:   10:    user_interface->service = service;
+        1:   11:    return user_interface;
+        -:   12:}
+        -:   13:
+function print_menu called 1 returned 100% blocks executed 100%
+        1:   14:void print_menu() {
+        1:   15:    printf("1 - Add a medicine\n");
+        1:   15-block  0
+call    0 returned 1
+        1:   16:    printf("2 - Remove a medicine\n");
+call    0 returned 1
+        1:   17:    printf("3 - Update a medicine\n");
+call    0 returned 1
+        1:   18:    printf("4 - See all available medicines containing a given string (type 'all' to list all medicines)\n");
+call    0 returned 1
+        1:   19:    printf("5 - See only those medicines that are in short supply\n");
+call    0 returned 1
+        1:   20:    printf("6 - Undo the last operation\n");
+call    0 returned 1
+        1:   21:    printf("7 - Redo the last operation\n");
+call    0 returned 1
+        1:   22:    printf("x - Exit\n");
+call    0 returned 1
+        1:   23:}
+        -:   24:
+function start_user_interface called 1 returned 100% blocks executed 6%
+        1:   25:void start_user_interface(UserInterface *user_interface) {
+        -:   26:    //having 10 hardcoded medicines at the start-up
+        -:   27:    {
+        1:   28:        service_add_medicine(user_interface->service, "Paracetamol", 500, 10, 10);
+        1:   28-block  0
+call    0 returned 1
+        -:   29:        /*service_add_medicine(user_interface->service, "Paracetamol", 200, 20, 8);
+        -:   30:        service_add_medicine(user_interface->service, "Antibiotics", 300, 30, 50);
+        -:   31:        service_add_medicine(user_interface->service, "Ibuprofen", 400, 10, 20);
+        -:   32:        service_add_medicine(user_interface->service, "Aspirin", 500, 30, 10);
+        -:   33:        service_add_medicine(user_interface->service, "Naproxen", 600, 20, 30);
+        -:   34:        service_add_medicine(user_interface->service, "Diclofenac", 700, 50, 40);
+        -:   35:        service_add_medicine(user_interface->service, "Acetaminophen", 800, 70, 50);
+        -:   36:        service_add_medicine(user_interface->service, "Vitamin D", 900, 80, 60);
+        -:   37:        service_add_medicine(user_interface->service, "Vitamin C", 1000, 90, 70);
+        -:   38:        service_add_medicine(user_interface->service, "Vitamin B12", 1100, 10, 80);
+        -:   39:        service_add_medicine(user_interface->service, "Vitamin B6", 1200, 40, 90);*/
+        -:   40:    }
+        1:   41:    char choice = '0';
+        1:   42:    print_menu();
+call    0 returned 1
+        2:   43:    while (choice != 'x') {
+        2:   43-block  0
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:   44:        printf("Enter your choice: ");
+        1:   44-block  0
+call    0 returned 1
+        -:   45:        //getting the choice
+        1:   46:        scanf("%c", &choice);
+call    0 returned 1
+        -:   47:
+        1:   48:        switch (choice) {
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 1
+branch  8 taken 0
+    #####:   49:            case '1': // add a medicine
+        -:   50:            {
+        -:   51:                // getting the name
+    #####:   52:                char name[50], *ptr = NULL;
+    #####:   53:                printf("Name:");
+    %%%%%:   53-block  0
+call    0 never executed
+    #####:   54:                scanf("%s", name);
+call    0 never executed
+        -:   55:
+        -:   56:                TInt concentration, quantity, price;
+        -:   57:                // getting the concentration, quantity and price
+        -:   58:                {
+        -:   59:                    char concentrationStr[20], quantityStr[20], priceStr[20];
+        -:   60:
+        -:   61:                    // getting the concentration
+        -:   62:                    {
+    #####:   63:                        printf("Concentration:");
+call    0 never executed
+    #####:   64:                        scanf("%s", concentrationStr);
+call    0 never executed
+    #####:   65:                        concentration = strtol(concentrationStr, (char **) ptr, 10);
+call    0 never executed
+        -:   66:                        // this block is for the input validation
+        -:   67:                        {
+    #####:   68:                            if (concentration == LONG_MAX || concentration == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   68-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:   69:                                perror("!! Problem is -> ");
+    %%%%%:   69-block  0
+call    0 never executed
+    #####:   70:                                continue;
+    %%%%%:   70-block  0
+    #####:   71:                            } else if (concentration == 0) {
+    %%%%%:   71-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   72:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:   72-block  0
+call    0 never executed
+    #####:   73:                                continue;
+        -:   74:                            }
+        -:   75:                        }
+        -:   76:                    }
+        -:   77:
+        -:   78:                    // getting the quantity
+        -:   79:                    {
+    #####:   80:                        printf("Quantity:");
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:                        scanf("%s", quantityStr);
+call    0 never executed
+    #####:   82:                        quantity = strtol(quantityStr, (char **) ptr, 10);
+call    0 never executed
+        -:   83:                        // this block is for the input validation
+        -:   84:                        {
+    #####:   85:                            if (quantity == LONG_MAX || quantity == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   85-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:   86:                                perror("!! Problem is -> ");
+    %%%%%:   86-block  0
+call    0 never executed
+    #####:   87:                                continue;
+    #####:   88:                            } else if (quantity == 0) {
+    %%%%%:   88-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   89:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:   89-block  0
+call    0 never executed
+    #####:   90:                                continue;
+        -:   91:                            }
+        -:   92:                        }
+        -:   93:                    }
+        -:   94:
+        -:   95:                    // getting the price
+        -:   96:                    {
+    #####:   97:                        printf("Price:");
+    %%%%%:   97-block  0
+call    0 never executed
+    #####:   98:                        scanf("%s", priceStr);
+call    0 never executed
+    #####:   99:                        price = strtol(priceStr, (char **) ptr, 10);
+call    0 never executed
+        -:  100:                        // this block is for the input validation
+        -:  101:                        {
+    #####:  102:                            if (price == LONG_MAX || price == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  102-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  103:                                perror("!! Problem is -> ");
+    %%%%%:  103-block  0
+call    0 never executed
+    #####:  104:                                continue;
+    #####:  105:                            } else if (price == 0) {
+    %%%%%:  105-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  106:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:  106-block  0
+call    0 never executed
+    #####:  107:                                continue;
+        -:  108:                            }
+        -:  109:                        }
+        -:  110:                    }
+        -:  111:                }
+        -:  112:
+    #####:  113:                if (service_add_medicine(user_interface->service, name, concentration, quantity, price) == 0)
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:                    printf("-> Because the medicine already exists the quantity was added\n");
+    %%%%%:  114-block  0
+call    0 never executed
+        -:  115:                else
+    #####:  116:                    printf("-> Medicine added successfully!\n");
+    %%%%%:  116-block  0
+call    0 never executed
+        -:  117:
+        -:  118:            }
+    #####:  119:                getchar();
+    %%%%%:  119-block  0
+call    0 never executed
+    #####:  120:                break;
+    #####:  121:            case '2': // remove a medicine
+        -:  122:            {
+        -:  123:                // getting the name
+    #####:  124:                char name[50], *ptr = NULL;
+    #####:  125:                printf("Name:");
+    %%%%%:  125-block  0
+call    0 never executed
+    #####:  126:                scanf("%s", name);
+call    0 never executed
+        -:  127:
+        -:  128:                TInt concentration;
+        -:  129:                // getting the concentration
+        -:  130:                {
+        -:  131:                    char concentrationStr[20];
+    #####:  132:                    printf("Concentration:");
+call    0 never executed
+    #####:  133:                    scanf("%s", concentrationStr);
+call    0 never executed
+    #####:  134:                    concentration = strtol(concentrationStr, (char **) ptr, 10);
+call    0 never executed
+        -:  135:                    // this block is for the input validation
+        -:  136:                    {
+    #####:  137:                        if (concentration == LONG_MAX || concentration == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  137-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  138:                            perror("!! Problem is -> ");
+    %%%%%:  138-block  0
+call    0 never executed
+    #####:  139:                            continue;
+    %%%%%:  139-block  0
+    #####:  140:                        } else if (concentration == 0) {
+    %%%%%:  140-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  141:                            printf("No number found input is -> %s\n", ptr);
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:                            continue;
+        -:  143:                        }
+        -:  144:                    }
+        -:  145:                }
+        -:  146:
+    #####:  147:                if (service_remove_medicine(user_interface->service, name, concentration) == 0)
+    %%%%%:  147-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  148:                    printf("-> Medicine not found!\n");
+    %%%%%:  148-block  0
+call    0 never executed
+        -:  149:                else
+    #####:  150:                    printf("-> Medicine removed successfully!\n");
+    %%%%%:  150-block  0
+call    0 never executed
+        -:  151:
+        -:  152:            }
+    #####:  153:                getchar();
+    %%%%%:  153-block  0
+call    0 never executed
+    #####:  154:                break;
+    #####:  155:            case '3': // Update a medicine
+        -:  156:            {
+        -:  157:                // getting the name
+        -:  158:                char name[50];
+    #####:  159:                printf("Name:");
+    %%%%%:  159-block  0
+call    0 never executed
+    #####:  160:                scanf("%s", name);
+call    0 never executed
+        -:  161:
+        -:  162:                TInt concentration, new_quantity, new_price;
+        -:  163:                // getting the concentration, new_quantity and new_price
+        -:  164:                {
+        -:  165:                    char concentrationStr[20], new_quantityStr[20], new_priceStr[20];
+    #####:  166:                    char *ptr = NULL;
+        -:  167:                    // getting the concentration
+        -:  168:                    {
+    #####:  169:                        printf("Concentration:");
+call    0 never executed
+    #####:  170:                        scanf("%s", concentrationStr);
+call    0 never executed
+    #####:  171:                        concentration = strtol(concentrationStr, (char **) ptr, 10);
+call    0 never executed
+        -:  172:                        // this block is for the input validation
+        -:  173:                        {
+    #####:  174:                            if (concentration == LONG_MAX || concentration == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  174-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  175:                                perror("!! Problem is -> ");
+    %%%%%:  175-block  0
+call    0 never executed
+    #####:  176:                                continue;
+    %%%%%:  176-block  0
+    #####:  177:                            } else if (concentration == 0) {
+    %%%%%:  177-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  178:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:  178-block  0
+call    0 never executed
+    #####:  179:                                continue;
+        -:  180:                            }
+        -:  181:                        }
+        -:  182:                    }
+        -:  183:
+        -:  184:                    // getting the new_quantity
+        -:  185:                    {
+    #####:  186:                        printf("New quantity:");
+    %%%%%:  186-block  0
+call    0 never executed
+    #####:  187:                        scanf("%s", new_quantityStr);
+call    0 never executed
+    #####:  188:                        new_quantity = strtol(new_quantityStr, (char **) ptr, 10);
+call    0 never executed
+        -:  189:                        // this block is for the input validation
+        -:  190:                        {
+    #####:  191:                            if (new_quantity == LONG_MAX || new_quantity == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  191-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  192:                                perror("!! Problem is -> ");
+    %%%%%:  192-block  0
+call    0 never executed
+    #####:  193:                                continue;
+    #####:  194:                            } else if (new_quantity == 0) {
+    %%%%%:  194-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  195:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:  195-block  0
+call    0 never executed
+    #####:  196:                                continue;
+        -:  197:                            }
+        -:  198:                        }
+        -:  199:                    }
+        -:  200:
+        -:  201:                    // getting the new_price
+        -:  202:                    {
+    #####:  203:                        printf("New price:");
+    %%%%%:  203-block  0
+call    0 never executed
+    #####:  204:                        scanf("%s", new_priceStr);
+call    0 never executed
+    #####:  205:                        new_price = strtol(new_priceStr, (char **) ptr, 10);
+call    0 never executed
+        -:  206:                        // this block is for the input validation
+        -:  207:                        {
+    #####:  208:                            if (new_price == LONG_MAX || new_price == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  208-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  209:                                perror("!! Problem is -> ");
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:                                continue;
+    #####:  211:                            } else if (new_price == 0) {
+    %%%%%:  211-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  212:                                printf("No number found input is -> %s\n", ptr);
+    %%%%%:  212-block  0
+call    0 never executed
+    #####:  213:                                continue;
+        -:  214:                            }
+        -:  215:                        }
+        -:  216:                    }
+        -:  217:                }
+        -:  218:
+    #####:  219:                if (service_update_medicine(user_interface->service, name, concentration, new_quantity,
+    %%%%%:  219-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  220:                                            new_price) == 0)
+    #####:  221:                    printf("-> Medicine not found!\n");
+    %%%%%:  221-block  0
+call    0 never executed
+        -:  222:                else
+    #####:  223:                    printf("-> Medicine updated successfully!\n");
+    %%%%%:  223-block  0
+call    0 never executed
+        -:  224:
+        -:  225:            }
+    #####:  226:                getchar();
+    %%%%%:  226-block  0
+call    0 never executed
+    #####:  227:                break;
+    #####:  228:            case '4': // See all available medicines containing a given string (type 'all' to list all medicines)
+        -:  229:            {
+        -:  230:                char str[50];
+    #####:  231:                printf("Enter the string: ");
+    %%%%%:  231-block  0
+call    0 never executed
+    #####:  232:                scanf("%s", str);
+call    0 never executed
+        -:  233:                // if the user typed all make the string empty to list all the medicines
+    #####:  234:                if (strcmp(str, "all") == 0)
+branch  0 never executed
+branch  1 never executed
+    #####:  235:                    strcpy(str, "");
+    %%%%%:  235-block  0
+    #####:  236:                TInt lengthFilteredMedicines = 0;
+    #####:  237:                DynamicArray *filteredMedicines = service_list_medicines_by_name(user_interface->service, str,
+    %%%%%:  237-block  0
+call    0 never executed
+        -:  238:                                                                                 &lengthFilteredMedicines);
+        -:  239:
+    #####:  240:                if(lengthFilteredMedicines == 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  241:                    printf("-> No medicine found out this name in it!\n");
+    %%%%%:  241-block  0
+call    0 never executed
+    #####:  242:                    break;
+        -:  243:                }
+        -:  244:
+        -:  245:                //print the filtered medicines
+    #####:  246:                for (TInt i = 0; i < lengthFilteredMedicines; i++)
+    %%%%%:  246-block  0
+    %%%%%:  246-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  247:                    printf("%s %ld %ld %ld\n", get_name(getElemFromPosition_DynamicArray(filteredMedicines, i)),
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  248:                           get_concentration(getElemFromPosition_DynamicArray(filteredMedicines, i)),
+call    0 never executed
+    #####:  249:                           get_quantity(getElemFromPosition_DynamicArray(filteredMedicines, i)), get_price(getElemFromPosition_DynamicArray(filteredMedicines, i)));
+    %%%%%:  249-block  0
+call    0 never executed
+call    1 never executed
+        -:  250:                // free the memory
+        -:  251://                destroy_DynamicArray(filteredMedicines);
+    #####:  252:                free(filteredMedicines);
+        -:  253:            }
+    #####:  254:                getchar();
+    %%%%%:  254-block  0
+call    0 never executed
+    #####:  255:                break;
+    #####:  256:            case '5': // See only those medicines that are in short supply
+        -:  257:            {
+        -:  258:                //getting the quantity
+        -:  259:                TInt quantity;
+        -:  260:                {
+    #####:  261:                    char numberOfItemsStr[20], *ptr = NULL;
+    #####:  262:                    printf("Quantity to be compared with:");
+    %%%%%:  262-block  0
+call    0 never executed
+    #####:  263:                    scanf("%s", numberOfItemsStr);
+call    0 never executed
+    #####:  264:                    quantity = strtol(numberOfItemsStr, (char **) ptr, 10);
+call    0 never executed
+        -:  265:                    // this block is for the input validation
+        -:  266:                    {
+    #####:  267:                        if (quantity == LONG_MAX || quantity == LONG_MIN) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  267-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  268:                            perror("!! Problem is -> ");
+    %%%%%:  268-block  0
+call    0 never executed
+    #####:  269:                            continue;
+    %%%%%:  269-block  0
+    #####:  270:                        } else if (quantity == 0) {
+    %%%%%:  270-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  271:                            printf("No number found, input is -> %s \n", ptr);
+    %%%%%:  271-block  0
+call    0 never executed
+    #####:  272:                            continue;
+        -:  273:                        }
+        -:  274:                    }
+        -:  275:                }
+        -:  276:
+    #####:  277:                TInt lengthShortSupplyMedicines = 0;
+    #####:  278:                DynamicArray *shortSupplyMedicines = service_list_medicines_in_short_supply(user_interface->service, &lengthShortSupplyMedicines, quantity);
+    %%%%%:  278-block  0
+call    0 never executed
+        -:  279:
+    #####:  280:                if(lengthShortSupplyMedicines == 0){
+branch  0 never executed
+branch  1 never executed
+    #####:  281:                    printf("-> There are no medicine in short supply!\n");
+    %%%%%:  281-block  0
+call    0 never executed
+    #####:  282:                    break;
+        -:  283:                }
+        -:  284:                //print the medicines in short supply
+    #####:  285:                for (TInt i = 0; i < lengthShortSupplyMedicines; i++)
+    %%%%%:  285-block  0
+    %%%%%:  285-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  286:                    printf("%s %ld %ld %ld \n", get_name(getElemFromPosition_DynamicArray(shortSupplyMedicines, i)),
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  287:                           get_concentration(getElemFromPosition_DynamicArray(shortSupplyMedicines, i)),
+call    0 never executed
+    #####:  288:                           get_quantity(getElemFromPosition_DynamicArray(shortSupplyMedicines, i)), get_price(getElemFromPosition_DynamicArray(shortSupplyMedicines, i)));
+    %%%%%:  288-block  0
+call    0 never executed
+call    1 never executed
+        -:  289:
+        -:  290:                // free the memory
+        -:  291://                destroy_DynamicArray(shortSupplyMedicines);
+    #####:  292:                free(shortSupplyMedicines);
+        -:  293:            }
+    #####:  294:                getchar();
+    %%%%%:  294-block  0
+call    0 never executed
+    #####:  295:                break;
+    #####:  296:            case '6': // undo the last operation
+        -:  297:            {
+    #####:  298:                if (undo(user_interface->service) == 0)
+    %%%%%:  298-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:                    printf("-> No more operations to undo!\n");
+    %%%%%:  299-block  0
+call    0 never executed
+        -:  300:                else
+    #####:  301:                    printf("-> Undo successfully!\n");
+    %%%%%:  301-block  0
+call    0 never executed
+        -:  302:            }
+    #####:  303:                getchar();
+    %%%%%:  303-block  0
+call    0 never executed
+    #####:  304:                break;
+    #####:  305:            case '7': // redo the last operation
+        -:  306:            {
+    #####:  307:                if (redo(user_interface->service) == 0)
+    %%%%%:  307-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  308:                    printf("-> No more operations to redo!\n");
+    %%%%%:  308-block  0
+call    0 never executed
+        -:  309:                else
+    #####:  310:                    printf("-> Redo successfully!\n");
+    %%%%%:  310-block  0
+call    0 never executed
+        -:  311:            }
+    #####:  312:                getchar();
+    %%%%%:  312-block  0
+call    0 never executed
+    #####:  313:                break;
+        1:  314:            case 'x':
+        1:  315:                printf("Goodbye!\n");
+        1:  315-block  0
+call    0 returned 1
+        1:  316:                getchar();
+call    0 returned 1
+        1:  317:                break;
+    #####:  318:            default:
+    #####:  319:                printf("Invalid choice!\n");
+    %%%%%:  319-block  0
+call    0 never executed
+    #####:  320:                getchar();
+call    0 never executed
+    #####:  321:                break;
+        -:  322:
+        -:  323:        }
+        -:  324:    }
+        -:  325:
+        1:  326:}
+        -:  327:
+function destroy_user_interface called 1 returned 100% blocks executed 100%
+        1:  328:void destroy_user_interface(UserInterface *user_interface) {
+        1:  329:    destroy_service(user_interface->service);
+        1:  329-block  0
+call    0 returned 1
+        1:  330:    free(user_interface);
+        1:  331:}

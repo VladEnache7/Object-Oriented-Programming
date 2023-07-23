@@ -1,0 +1,3 @@
+/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug/CMakeFiles/a45_912_enache_vlad.dir
+/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug/CMakeFiles/rebuild_cache.dir

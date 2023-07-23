@@ -1,0 +1,2224 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/Tests.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/Tests.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include <cassert>
+        -:    3:#include "Tests.h"
+        -:    4:#include "DynamicVector.h"
+        -:    5:#include "Dog.h"
+        -:    6:#include "RepoShelterDogs.h"
+        -:    7:#include "ServiceAdmin.h"
+        -:    8:#include "Exceptions.h"
+        -:    9:#include "RepoAdoptedDogs.h"
+        -:   10:#include "ServiceUser.h"
+        -:   11:
+function _ZN5Tests17testDynamicVectorEv called 1 returned 100% blocks executed 63%
+        1:   12:void Tests::testDynamicVector() {
+        -:   13:    // testing the constructor
+        2:   14:    DynamicVector<int> v(5);
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   14-block  1
+call    4 never executed
+        -:   15:    // testing addElement
+        1:   16:    v.addElement(1);
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   16-block  1
+        1:   17:    v.addElement(2);
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   17-block  1
+        1:   18:    v.addElement(3);
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   18-block  1
+        1:   19:    v.addElement(4);
+        1:   19-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   19-block  1
+        1:   20:    v.addElement(5);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   20-block  1
+        -:   21:
+        -:   22:    // testing copy constructor and operator =
+        2:   23:    DynamicVector<int> v2(v);
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   23-block  1
+call    4 never executed
+        2:   24:    DynamicVector<int> v3;
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   24-block  1
+call    4 never executed
+        1:   25:    v3 = v;
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   26:    assert(v.getSize() == 5);
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   26-block  1
+call    3 never executed
+       1*:   27:    assert(v2.getSize() == 5);
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   27-block  1
+call    3 never executed
+       1*:   28:    assert(v3.getSize() == 5);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   28-block  1
+call    3 never executed
+       1*:   29:    assert(v.getCapacity() == 5);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   29-block  1
+call    3 never executed
+       1*:   30:    assert(v2.getCapacity() == 5);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   30-block  1
+call    3 never executed
+       1*:   31:    assert(v3.getCapacity() == 5);
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   31-block  1
+call    3 never executed
+        6:   32:    for (int i = 0; i < 5; ++i) {
+        1:   32-block  0
+        6:   32-block  1
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+        5:   32-block  2
+       5*:   33:        assert(v[i] == i + 1);
+        5:   33-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    %%%%%:   33-block  1
+call    3 never executed
+       5*:   34:        assert(v2[i] == i + 1);
+        5:   34-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    %%%%%:   34-block  1
+call    3 never executed
+       5*:   35:        assert(v3[i] == i + 1);
+        5:   35-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    %%%%%:   35-block  1
+call    3 never executed
+        -:   36:    }
+        -:   37:
+        -:   38:    // testing addElementToPosition
+        1:   39:    v.addElementToPosition(6, 0);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   39-block  1
+       1*:   40:    assert(v[0] == 6);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   40-block  1
+call    3 never executed
+        -:   41:
+        -:   42:    // testing removeElementFromPosition
+        1:   43:    v.removeElementFromPosition(0);
+        1:   43-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   44:    assert(v[0] == 1);
+        1:   44-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   44-block  1
+call    3 never executed
+        -:   45:
+        -:   46:    // testing removeCertainElement
+        1:   47:    v.removeCertainElement(1);
+        1:   47-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   47-block  1
+       1*:   48:    assert(v[0] == 2);
+        1:   48-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   48-block  1
+call    3 never executed
+        -:   49:
+        -:   50:    // testing findElement
+       1*:   51:    assert(*v.findElement(2) == 2);
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   51-block  1
+call    3 never executed
+       1*:   52:    assert(v.findElement(1) == nullptr);
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   52-block  1
+call    3 never executed
+        -:   53:
+        -:   54:    // test resize
+        2:   55:    DynamicVector<int> v4(1);
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  1
+call    3 returned 1
+    $$$$$:   55-block  2
+call    4 never executed
+        1:   56:    v4.addElement(1);
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   56-block  1
+        1:   57:    v4.addElement(2);
+        1:   57-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   57-block  1
+        1:   58:    v4.addElement(3);
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   58-block  1
+       1*:   59:    assert(v4.getSize() == 3);
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   59-block  1
+call    3 never executed
+       1*:   60:    assert(v4.getCapacity() == 4);
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   60-block  1
+call    3 never executed
+        1:   61:}
+        -:   62:
+function _ZN5Tests7testDogEv called 1 returned 100% blocks executed 60%
+        1:   63:void Tests::testDog() {
+        -:   64:    // testing constructor
+        -:   65:    Dog d1("Rex", "German Shepherd", 3,
+        5:   66:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+        1:   66-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   66-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   66-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   66-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   66-block  4
+    $$$$$:   66-block  5
+    $$$$$:   66-block  6
+    $$$$$:   66-block  7
+call   19 never executed
+       1*:   67:    assert(d1.getName() == "Rex");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   67-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   67-block  1
+call    6 never executed
+        1:   67-block  2
+call    7 returned 1
+       1*:   68:    assert(d1.getBreed() == "German Shepherd");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   68-block  1
+call    6 never executed
+        1:   68-block  2
+call    7 returned 1
+       1*:   69:    assert(d1.getAge() == 3);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   69-block  1
+call    5 never executed
+       1*:   70:    assert(d1.getPhotograph() == "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   70-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   70-block  2
+call    6 never executed
+        1:   70-block  3
+call    7 returned 1
+        -:   71:
+        -:   72:    // testing copy constructor
+        2:   73:    Dog d2{d1};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   73-block  0
+call    4 never executed
+       1*:   74:    assert(d2.getName() == "Rex");
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   74-block  2
+call    6 never executed
+        1:   74-block  3
+call    7 returned 1
+       1*:   75:    assert(d2.getBreed() == "German Shepherd");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   75-block  1
+call    6 never executed
+        1:   75-block  2
+call    7 returned 1
+       1*:   76:    assert(d2.getAge() == 3);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   76-block  1
+call    5 never executed
+       1*:   77:    assert(d2.getPhotograph() == "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   77-block  2
+call    6 never executed
+        1:   77-block  3
+call    7 returned 1
+        1:   78:    d2.setName("Rex2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   78-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   78-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   78-block  2
+call    9 never executed
+    $$$$$:   78-block  3
+       1*:   79:    assert(d2.getName() == "Rex2");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   79-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   79-block  1
+call    6 never executed
+        1:   79-block  2
+call    7 returned 1
+        -:   80:
+        -:   81:    // testing operator =
+        2:   82:    Dog d3;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82-block  0
+call    3 returned 1
+    $$$$$:   82-block  1
+call    4 never executed
+        1:   83:    d3 = d1;
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   84:    assert(d3.getName() == "Rex");
+        1:   84-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   84-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   84-block  2
+call    6 never executed
+        1:   84-block  3
+call    7 returned 1
+       1*:   85:    assert(d3.getBreed() == "German Shepherd");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   85-block  1
+call    6 never executed
+        1:   85-block  2
+call    7 returned 1
+       1*:   86:    assert(d3.getAge() == 3);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   86-block  1
+call    5 never executed
+       1*:   87:    assert(d3.getPhotograph() == "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   87-block  2
+call    6 never executed
+        1:   87-block  3
+call    7 returned 1
+        -:   88:
+        1:   89:    d3.setName("Rex3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   89-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   89-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   89-block  2
+call    9 never executed
+    $$$$$:   89-block  3
+        1:   90:    d3.setBreed("German Shepherd2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   90-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   90-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   90-block  2
+call    9 never executed
+    $$$$$:   90-block  3
+        1:   91:    d3.setAge(4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92:    d3.setPhotograph("test.jpg");
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   92-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   92-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   92-block  3
+call    9 never executed
+    $$$$$:   92-block  4
+       1*:   93:    assert(d3.getName() == "Rex3");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   93-block  1
+call    6 never executed
+        1:   93-block  2
+call    7 returned 1
+       1*:   94:    assert(d3.getBreed() == "German Shepherd2");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   94-block  1
+call    6 never executed
+        1:   94-block  2
+call    7 returned 1
+       1*:   95:    assert(d3.getAge() == 4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   95-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   95-block  1
+call    5 never executed
+       1*:   96:    assert(d3.getPhotograph() == "test.jpg");
+        1:   96-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   96-block  2
+call    6 never executed
+        1:   96-block  3
+call    7 returned 1
+        -:   97:
+        -:   98:    // testing operator ==
+        1:   99:    d2.setName("Rex");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   99-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   99-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   99-block  2
+call    9 never executed
+    $$$$$:   99-block  3
+       1*:  100:    assert(d2 == d1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  100-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  100-block  1
+call    5 never executed
+        1:  101:}
+        -:  102:
+function _ZN5Tests19testRepoShelterDogsEv called 1 returned 100% blocks executed 47%
+        1:  103:void Tests::testRepoShelterDogs() {
+        -:  104:    // testing constructor
+        2:  105:    RepoShelterDogs repo;
+        1:  105-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  105-block  1
+call    4 never executed
+       1*:  106:    assert(repo.getDogs().getSize() == 0);
+        1:  106-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  106-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  106-block  2
+call    6 never executed
+        1:  106-block  3
+call    7 returned 1
+        -:  107:
+        -:  108:    // testing addDog
+        -:  109:    Dog d1("Rex", "German Shepherd", 3,
+        5:  110:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  110-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  110-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  110-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  110-block  3
+    $$$$$:  110-block  4
+    $$$$$:  110-block  5
+    $$$$$:  110-block  6
+call   19 never executed
+        1:  111:    repo.addDog("Rex", "German Shepherd", 3,
+        1:  111-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  112:                "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  112-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  112-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  112-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  112-block  3
+call   18 never executed
+    $$$$$:  112-block  4
+    $$$$$:  112-block  5
+call   19 never executed
+    $$$$$:  112-block  6
+    $$$$$:  112-block  7
+call   20 never executed
+    $$$$$:  112-block  8
+       1*:  113:    assert(repo.getDogs().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  113-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  113-block  1
+call    6 never executed
+        1:  113-block  2
+call    7 returned 1
+       1*:  114:    assert(repo.getDogs()[0] == d1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  114-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  114-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  114-block  2
+call    9 never executed
+        1:  114-block  3
+call   10 returned 1
+    $$$$$:  114-block  4
+call   11 never executed
+    $$$$$:  114-block  5
+        -:  115:
+        -:  116:    // testing removeDog
+        1:  117:    repo.deleteDog("Rex");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  117-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  117-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  117-block  2
+call    9 never executed
+    $$$$$:  117-block  3
+       1*:  118:    assert(repo.getDogs().getSize() == 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  118-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  118-block  1
+call    6 never executed
+        1:  118-block  2
+call    7 returned 1
+        -:  119:
+        -:  120:    // testing updateDog
+        1:  121:    repo.addDog("Rex", "German Shepherd", 3,
+        1:  121-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  122:                "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  122-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  122-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  122-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  122-block  3
+call   18 never executed
+    $$$$$:  122-block  4
+    $$$$$:  122-block  5
+call   19 never executed
+    $$$$$:  122-block  6
+    $$$$$:  122-block  7
+call   20 never executed
+    $$$$$:  122-block  8
+        -:  123:    Dog d2("Rex", "German Shepherd2", 4,
+        4:  124:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  124-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  124-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  124-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  124-block  3
+    $$$$$:  124-block  4
+    $$$$$:  124-block  5
+    $$$$$:  124-block  6
+call   18 never executed
+        1:  125:    repo.updateDog("Rex", "German Shepherd2", 4, "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  125-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  125-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  125-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  125-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  125-block  4
+call   21 never executed
+    $$$$$:  125-block  5
+    $$$$$:  125-block  6
+call   22 never executed
+    $$$$$:  125-block  7
+    $$$$$:  125-block  8
+call   23 never executed
+    $$$$$:  125-block  9
+       1*:  126:    assert(repo.getDogs().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  126-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  126-block  1
+call    6 never executed
+        1:  126-block  2
+call    7 returned 1
+       1*:  127:    assert(repo.getDogs()[0] == d2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  127-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  127-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  127-block  2
+call    9 never executed
+        1:  127-block  3
+call   10 returned 1
+    $$$$$:  127-block  4
+call   11 never executed
+    $$$$$:  127-block  5
+        -:  128:
+        -:  129:    // testing getDogPosition
+       1*:  130:    assert(repo.getDogPosition(d2) == 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  130-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  130-block  1
+call    5 never executed
+       1*:  131:    assert(repo.getDogPosition(d1) == -1);
+        1:  131-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  131-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  131-block  2
+call    5 never executed
+        -:  132:
+        -:  133:    // testing getDogByName not found
+       1*:  134:    assert(repo.getDogByName("Rex2") == Dog());
+        1:  134-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  134-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  134-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  134-block  3
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:  134-block  4
+branch 13 taken 0 (fallthrough)
+branch 14 taken 1
+    %%%%%:  134-block  5
+call   15 never executed
+        1:  134-block  6
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  134-block  7
+call   21 never executed
+    $$$$$:  134-block  8
+    $$$$$:  134-block  9
+call   22 never executed
+    $$$$$:  134-block 10
+    $$$$$:  134-block 11
+call   23 never executed
+    $$$$$:  134-block 12
+        -:  135:
+        1:  136:}
+        -:  137:
+function _ZN5Tests16testServiceAdminEv called 1 returned 100% blocks executed 56%
+        1:  138:void Tests::testServiceAdmin() {
+        -:  139:    // testing constructor
+        2:  140:    RepoShelterDogs repoShelterDogs;
+        1:  140-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  140-block  1
+call    4 never executed
+        2:  141:    ServiceAdmin serviceAdmin{repoShelterDogs};
+        1:  141-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  141-block  1
+call    4 never executed
+        -:  142:
+       1*:  143:    assert(serviceAdmin.getDogs().getSize() == 0);
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  143-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  143-block  2
+call    6 never executed
+        1:  143-block  3
+call    7 returned 1
+        -:  144:
+        -:  145:    // testing addDog
+        -:  146:    Dog d1("Rex", "German Shepherd", 3,
+        5:  147:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  147-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  147-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  147-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  147-block  3
+    $$$$$:  147-block  4
+    $$$$$:  147-block  5
+    $$$$$:  147-block  6
+call   19 never executed
+        1:  148:    serviceAdmin.addDog("Rex", "German Shepherd", 3,
+        1:  148-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  149:                        "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  149-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  149-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  149-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  149-block  3
+call   18 never executed
+    $$$$$:  149-block  4
+    $$$$$:  149-block  5
+call   19 never executed
+    $$$$$:  149-block  6
+    $$$$$:  149-block  7
+call   20 never executed
+    $$$$$:  149-block  8
+       1*:  150:    assert(serviceAdmin.getDogs().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  150-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  150-block  1
+call    6 never executed
+        1:  150-block  2
+call    7 returned 1
+        -:  151:
+        -:  152:    // testing exception addDog
+        -:  153:    try {
+        1:  154:        serviceAdmin.addDog("Rex", "German Shepherd", 3,
+        1:  154-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+       7*:  155:                            "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  155-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  155-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+    %%%%%:  155-block  2
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+        1:  155-block  3
+call   18 returned 1
+        1:  155-block  4
+        1:  155-block  5
+call   19 returned 1
+        1:  155-block  6
+        1:  155-block  7
+call   20 returned 1
+        1:  155-block  8
+    #####:  156:        assert(false);
+call    0 never executed
+        1:  157:    } catch (Exception &e) {
+        1:  157-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  157-block  1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  158:        assert(true);
+        -:  159:    }
+        -:  160:
+        -:  161:    // testing removeDog
+        1:  162:    serviceAdmin.deleteDog("Rex");
+        1:  162-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  162-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  162-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  162-block  3
+call    9 never executed
+    $$$$$:  162-block  4
+        1:  163:    assert(serviceAdmin.getDogs().getSize() == 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  163-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  163-block  1
+call    6 never executed
+        1:  163-block  2
+call    7 returned 1
+        -:  164:
+        -:  165:    // testing exception removeDog
+        -:  166:    try {
+        2:  167:        serviceAdmin.deleteDog("Rex");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  167-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    $$$$$:  167-block  1
+call    7 never executed
+call    8 never executed
+        1:  167-block  2
+call    9 returned 1
+        1:  167-block  3
+    =====:  168:        assert(false);
+call    0 never executed
+        1:  169:    } catch (Exception &e) {
+        1:  169-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  169-block  1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  170:        assert(true);
+        -:  171:    }
+        -:  172:
+        -:  173:    // testing updateDog
+        1:  174:    serviceAdmin.addDog("Rex", "German Shepherd", 3,
+        1:  174-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  175:                        "updatedPicture.jpg");
+        1:  175-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  175-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  175-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  175-block  3
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  175-block  4
+call   18 never executed
+    $$$$$:  175-block  5
+    $$$$$:  175-block  6
+call   19 never executed
+    $$$$$:  175-block  7
+    $$$$$:  175-block  8
+call   20 never executed
+    $$$$$:  175-block  9
+        1:  176:    serviceAdmin.updateDog("Rex", "German Shepherd2", 7, "updatedPicture.jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  176-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  176-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  176-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  176-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  176-block  4
+call   21 never executed
+    $$$$$:  176-block  5
+    $$$$$:  176-block  6
+call   22 never executed
+    $$$$$:  176-block  7
+    $$$$$:  176-block  8
+call   23 never executed
+    $$$$$:  176-block  9
+        5:  177:    Dog d2("Rex", "German Shepherd2", 7, "updatedPicture.jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  177-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  177-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  177-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+        1:  177-block  3
+call   18 returned 1
+    $$$$$:  177-block  4
+    $$$$$:  177-block  5
+    $$$$$:  177-block  6
+    $$$$$:  177-block  7
+call   19 never executed
+        1:  178:    assert(serviceAdmin.getDogs().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  178-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  178-block  1
+call    6 never executed
+        1:  178-block  2
+call    7 returned 1
+        1:  179:    assert(serviceAdmin.getDogs()[0] == d2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  179-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  179-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  179-block  2
+call    9 never executed
+        1:  179-block  3
+call   10 returned 1
+    $$$$$:  179-block  4
+call   11 never executed
+    $$$$$:  179-block  5
+        -:  180:
+        -:  181:    // testing exception updateDog
+        -:  182:    try {
+        6:  183:        serviceAdmin.updateDog("FakeName", "German Shepherd2", 7, "updatedPicture.jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  183-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  183-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  183-block  2
+call   12 returned 1
+branch 13 taken 0 (fallthrough)
+branch 14 taken 1 (throw)
+    $$$$$:  183-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+        1:  183-block  4
+call   21 returned 1
+        1:  183-block  5
+        1:  183-block  6
+call   22 returned 1
+        1:  183-block  7
+        1:  183-block  8
+call   23 returned 1
+        1:  183-block  9
+    =====:  184:        assert(false);
+call    0 never executed
+        1:  185:    } catch (Exception &e) {
+        1:  185-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  185-block  1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  186:        assert(true);
+        -:  187:    }
+        -:  188:
+        -:  189:    // testing getDogPosition
+        1:  190:    assert(serviceAdmin.getDogPosition(d2) == 0);
+        1:  190-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    $$$$$:  190-block  2
+call    5 never executed
+        -:  191:
+        -:  192:    // testing getDogByName
+        1:  193:    assert(serviceAdmin.getDogByName("Rex") == d2);
+        1:  193-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  193-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  193-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  193-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    $$$$$:  193-block  4
+call   12 never executed
+        1:  193-block  5
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+    $$$$$:  193-block  6
+call   16 never executed
+    $$$$$:  193-block  7
+    $$$$$:  193-block  8
+call   17 never executed
+    $$$$$:  193-block  9
+        -:  194:
+        -:  195:    //testing getDogByName exception
+        -:  196:    try {
+        2:  197:        serviceAdmin.getDogByName("FakeName");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  197-block  0
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    $$$$$:  197-block  1
+call    7 never executed
+call    8 never executed
+call    9 never executed
+        1:  197-block  2
+call   10 returned 1
+        1:  197-block  3
+    =====:  198:        assert(false);
+call    0 never executed
+        1:  199:    } catch (Exception &e) {
+        1:  199-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  199-block  1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  200:        assert(true);
+        -:  201:    }
+        1:  202:}
+        -:  203:
+function _ZN5Tests19testRepoAdoptedDogsEv called 1 returned 100% blocks executed 49%
+        1:  204:void Tests::testRepoAdoptedDogs(){
+        -:  205:    // testing constructor
+        2:  206:    RepoAdoptedDogs repoAdoptedDogs;
+        1:  206-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  206-block  1
+call    4 never executed
+       1*:  207:    assert(repoAdoptedDogs.getDogs().getSize() == 0);
+        1:  207-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  207-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  207-block  2
+call    6 never executed
+        1:  207-block  3
+call    7 returned 1
+        -:  208:
+        -:  209:    // testing addDog
+        -:  210:    Dog d1("Rex", "German Shepherd", 3,
+        5:  211:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  211-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  211-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  211-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  211-block  3
+    $$$$$:  211-block  4
+    $$$$$:  211-block  5
+    $$$$$:  211-block  6
+call   19 never executed
+        1:  212:    repoAdoptedDogs.addDog("Rex", "German Shepherd", 3,
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  213:                           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  213-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  213-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  213-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  213-block  3
+call   18 never executed
+    $$$$$:  213-block  4
+    $$$$$:  213-block  5
+call   19 never executed
+    $$$$$:  213-block  6
+    $$$$$:  213-block  7
+call   20 never executed
+    $$$$$:  213-block  8
+       1*:  214:    assert(repoAdoptedDogs.getDogs().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  214-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  214-block  1
+call    6 never executed
+        1:  214-block  2
+call    7 returned 1
+       1*:  215:    assert(repoAdoptedDogs.getDogs()[0] == d1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  215-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  215-block  2
+call    9 never executed
+        1:  215-block  3
+call   10 returned 1
+    $$$$$:  215-block  4
+call   11 never executed
+    $$$$$:  215-block  5
+        -:  216:
+        -:  217:    // testing addDog directly
+        -:  218:    Dog d2 = Dog("Rex2", "German Shepherd2", 4,
+        4:  219:                 "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  219-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  219-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  219-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  219-block  3
+    $$$$$:  219-block  4
+    $$$$$:  219-block  5
+    $$$$$:  219-block  6
+call   18 never executed
+        1:  220:    repoAdoptedDogs.addDog(d2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  221:    assert(repoAdoptedDogs.getDogs().getSize() == 2);
+        1:  221-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  221-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  221-block  2
+call    6 never executed
+        1:  221-block  3
+call    7 returned 1
+       1*:  222:    assert(repoAdoptedDogs.getDogs()[1] == d2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  222-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  222-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  222-block  2
+call    9 never executed
+        1:  222-block  3
+call   10 returned 1
+call   11 returned 1
+    $$$$$:  222-block  4
+call   12 never executed
+    $$$$$:  222-block  5
+        1:  223:}
+        -:  224:
+function _ZN5Tests15testServiceUserEv called 1 returned 100% blocks executed 45%
+        1:  225:void Tests::testServiceUser(){
+        -:  226:    // testing constructor
+        2:  227:    RepoShelterDogs repoShelterDogs;
+        1:  227-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  227-block  1
+call    4 never executed
+        2:  228:    RepoAdoptedDogs repoAdoptedDogs;
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  228-block  1
+call    4 never executed
+        2:  229:    ServiceUser serviceUser(repoShelterDogs, repoAdoptedDogs);
+        1:  229-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  229-block  1
+call    4 never executed
+       1*:  230:    assert(serviceUser.getDogsShelter().getSize() == 0);
+        1:  230-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  230-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  230-block  2
+call    6 never executed
+        1:  230-block  3
+call    7 returned 1
+       1*:  231:    assert(serviceUser.getDogsAdopted().getSize() == 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  231-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  231-block  1
+call    6 never executed
+        1:  231-block  2
+call    7 returned 1
+        -:  232:
+        -:  233:    // testing adoptDog
+        -:  234:    Dog d1("Rex", "German Shepherd", 3,
+        5:  235:           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  235-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  235-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  235-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  235-block  3
+    $$$$$:  235-block  4
+    $$$$$:  235-block  5
+    $$$$$:  235-block  6
+call   19 never executed
+        1:  236:    repoShelterDogs.addDog("Rex", "German Shepherd", 3,
+        1:  236-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  237:                           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  237-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  237-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  237-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  237-block  3
+call   18 never executed
+    $$$$$:  237-block  4
+    $$$$$:  237-block  5
+call   19 never executed
+    $$$$$:  237-block  6
+    $$$$$:  237-block  7
+call   20 never executed
+    $$$$$:  237-block  8
+        1:  238:    serviceUser.adoptDog("Rex");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  238-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  238-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  238-block  2
+call    9 never executed
+    $$$$$:  238-block  3
+       1*:  239:    assert(serviceUser.getDogsShelter().getSize() == 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  239-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  239-block  1
+call    6 never executed
+        1:  239-block  2
+call    7 returned 1
+       1*:  240:    assert(serviceUser.getDogsAdopted().getSize() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  240-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  240-block  1
+call    6 never executed
+        1:  240-block  2
+call    7 returned 1
+       1*:  241:    assert(serviceUser.getDogsAdopted()[0] == d1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  241-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  241-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  241-block  2
+call    9 never executed
+        1:  241-block  3
+call   10 returned 1
+    $$$$$:  241-block  4
+call   11 never executed
+    $$$$$:  241-block  5
+        -:  242:
+        -:  243:    // testing getDogsFiltered
+        1:  244:    repoShelterDogs.addDog("Rex2", "German Shepherd", 3,
+        1:  244-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  245:                           "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  245-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  245-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  245-block  2
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:  245-block  3
+call   18 never executed
+    $$$$$:  245-block  4
+    $$$$$:  245-block  5
+call   19 never executed
+    $$$$$:  245-block  6
+    $$$$$:  245-block  7
+call   20 never executed
+    $$$$$:  245-block  8
+        1:  246:    repoShelterDogs.addDog("Rex3", "German Shepherd", 3, "updatedPicture.jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  246-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  246-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  246-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  246-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  246-block  4
+call   21 never executed
+    $$$$$:  246-block  5
+    $$$$$:  246-block  6
+call   22 never executed
+    $$$$$:  246-block  7
+    $$$$$:  246-block  8
+call   23 never executed
+    $$$$$:  246-block  9
+        1:  247:    repoShelterDogs.addDog("Rex4", "German Shepherd", 3, "updatedPicture.jpg");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  247-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  247-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  247-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  247-block  3
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+    $$$$$:  247-block  4
+call   21 never executed
+    $$$$$:  247-block  5
+    $$$$$:  247-block  6
+call   22 never executed
+    $$$$$:  247-block  7
+    $$$$$:  247-block  8
+call   23 never executed
+    $$$$$:  247-block  9
+        -:  248:
+        3:  249:    DynamicVector<Dog> dogsFiltered = serviceUser.getDogsFiltered("German Shepherd", 10);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  249-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  249-block  1
+    $$$$$:  249-block  2
+call    9 never executed
+       1*:  250:    assert(dogsFiltered.getSize() == 3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  250-block  0
+call    3 never executed
+       1*:  251:    assert(dogsFiltered[0] == Dog("Rex2", "German Shepherd", 3,
+        1:  251-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  251-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  251-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  251-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  251-block  4
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  251-block  5
+branch 19 taken 0 (fallthrough)
+branch 20 taken 1
+    %%%%%:  251-block  6
+call   21 never executed
+        1:  251-block  7
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+    $$$$$:  251-block  8
+call   29 never executed
+    $$$$$:  251-block  9
+    $$$$$:  251-block 10
+call   30 never executed
+    $$$$$:  251-block 11
+    $$$$$:  251-block 12
+call   31 never executed
+    $$$$$:  251-block 13
+    $$$$$:  251-block 14
+call   32 never executed
+    $$$$$:  251-block 15
+        -:  252:                                  "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg"));
+       1*:  253:    assert(dogsFiltered[1] == Dog("Rex3", "German Shepherd", 3, "updatedPicture.jpg"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  253-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  253-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  253-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  253-block  3
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  253-block  4
+branch 19 taken 0 (fallthrough)
+branch 20 taken 1
+    %%%%%:  253-block  5
+call   21 never executed
+        1:  253-block  6
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+    $$$$$:  253-block  7
+call   29 never executed
+    $$$$$:  253-block  8
+    $$$$$:  253-block  9
+call   30 never executed
+    $$$$$:  253-block 10
+    $$$$$:  253-block 11
+call   31 never executed
+    $$$$$:  253-block 12
+    $$$$$:  253-block 13
+call   32 never executed
+    $$$$$:  253-block 14
+       1*:  254:    assert(dogsFiltered[2] == Dog("Rex4", "German Shepherd", 3, "updatedPicture.jpg"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  254-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  254-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  254-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  254-block  3
+call   15 returned 1
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  254-block  4
+branch 19 taken 0 (fallthrough)
+branch 20 taken 1
+    %%%%%:  254-block  5
+call   21 never executed
+        1:  254-block  6
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+    $$$$$:  254-block  7
+call   29 never executed
+    $$$$$:  254-block  8
+    $$$$$:  254-block  9
+call   30 never executed
+    $$$$$:  254-block 10
+    $$$$$:  254-block 11
+call   31 never executed
+    $$$$$:  254-block 12
+    $$$$$:  254-block 13
+call   32 never executed
+    $$$$$:  254-block 14
+        -:  255:
+        -:  256:    // testing getCurrentDog
+       1*:  257:    assert(serviceUser.getCurrentDog() == Dog("Rex2", "German Shepherd", 3,
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  257-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  257-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  257-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  257-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  257-block  4
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:  257-block  5
+branch 21 taken 0 (fallthrough)
+branch 22 taken 1
+    %%%%%:  257-block  6
+call   23 never executed
+        1:  257-block  7
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+call   29 returned 1
+call   30 returned 1
+call   31 returned 1
+    $$$$$:  257-block  8
+call   32 never executed
+    $$$$$:  257-block  9
+    $$$$$:  257-block 10
+call   33 never executed
+    $$$$$:  257-block 11
+    $$$$$:  257-block 12
+call   34 never executed
+    $$$$$:  257-block 13
+    $$$$$:  257-block 14
+call   35 never executed
+    $$$$$:  257-block 15
+    $$$$$:  257-block 16
+call   36 never executed
+    $$$$$:  257-block 17
+        -:  258:                                             "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg"));
+        1:  259:    serviceUser.goToTheNextDog();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  260:    assert(serviceUser.getCurrentDog() == Dog("Rex3", "German Shepherd", 3, "updatedPicture.jpg"));
+        1:  260-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  260-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  260-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  260-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  260-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  260-block  5
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:  260-block  6
+branch 21 taken 0 (fallthrough)
+branch 22 taken 1
+    %%%%%:  260-block  7
+call   23 never executed
+        1:  260-block  8
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+call   29 returned 1
+call   30 returned 1
+call   31 returned 1
+    $$$$$:  260-block  9
+call   32 never executed
+    $$$$$:  260-block 10
+    $$$$$:  260-block 11
+call   33 never executed
+    $$$$$:  260-block 12
+    $$$$$:  260-block 13
+call   34 never executed
+    $$$$$:  260-block 14
+    $$$$$:  260-block 15
+call   35 never executed
+    $$$$$:  260-block 16
+    $$$$$:  260-block 17
+call   36 never executed
+    $$$$$:  260-block 18
+        -:  261:
+        -:  262:    // testing adoptDog se
+        1:  263:}
+        -:  264:
+function _ZN5Tests7testAllEv called 1 returned 100% blocks executed 100%
+        1:  265:void Tests::testAll() {
+        1:  266:    this->testDynamicVector();
+        1:  266-block  0
+call    0 returned 1
+        1:  267:    this->testDog();
+call    0 returned 1
+        1:  268:    this->testRepoShelterDogs();
+call    0 returned 1
+        1:  269:    this->testServiceAdmin();
+call    0 returned 1
+        1:  270:    this->testRepoAdoptedDogs();
+call    0 returned 1
+        1:  271:    this->testServiceUser();
+call    0 returned 1
+        1:  272:}

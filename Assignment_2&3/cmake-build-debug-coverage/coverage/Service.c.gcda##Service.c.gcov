@@ -1,0 +1,239 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/Service.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Service.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Service.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <string.h>
+        -:    3:#include "Service.h"
+        -:    4:#include "Medicine.h"
+        -:    5:
+        -:    6:
+function create_service called 9 returned 100% blocks executed 100%
+        9:    7:Service* create_service(){
+        9:    8:    Service* service = (Service*)malloc(sizeof(Service));
+        -:    9:
+        -:   10:    // setting up the repository
+        9:   11:    Repository* repository = create_repository(20);
+        9:   11-block  0
+call    0 returned 9
+        9:   12:    service->repository = repository;
+        -:   13:
+        -:   14:    // setting up the undoRedoService
+        9:   15:    UndoRedoService* undoRedoService = create_undoRedoService();
+call    0 returned 9
+        9:   16:    service->undoRedoService = undoRedoService;
+        -:   17:
+        -:   18:    //returning the created service
+        9:   19:    return service;
+        -:   20:}
+        -:   21:
+function destroy_service called 7 returned 100% blocks executed 100%
+        7:   22:void destroy_service(Service *service){
+        -:   23:    // freeing the repository
+        7:   24:    destroy_repository(service->repository);
+        7:   24-block  0
+call    0 returned 7
+        -:   25:
+        -:   26:    // freeing the undoRedoService
+        7:   27:    destroy_undoRedoService(service->undoRedoService);
+call    0 returned 7
+        7:   28:    free(service);
+        7:   29:    service = NULL;
+        7:   30:}
+        -:   31:
+function service_get_medicine_list called 15 returned 100% blocks executed 100%
+       15:   32:DynamicArray* service_get_medicine_list(Service* service){
+       15:   33:    return repo_get_medicine_list(service->repository);
+       15:   33-block  0
+call    0 returned 15
+        -:   34:}
+        -:   35:
+function service_add_medicine called 20 returned 100% blocks executed 100%
+       20:   36:TInt service_add_medicine(Service* service, char* name, TInt concentration, TInt quantity, TInt price){
+       20:   37:    if (has_medicine(service->repository, name, concentration) != -1) {
+       20:   37-block  0
+call    0 returned 20
+branch  1 taken 1 (fallthrough)
+branch  2 taken 19
+        1:   38:        add_medicine(service->repository, name, concentration, quantity, price);
+        1:   38-block  0
+call    0 returned 1
+        1:   39:        return 0;
+        -:   40:    }
+       19:   41:    service->repository = add_medicine(service->repository, name, concentration, quantity, price);
+       19:   41-block  0
+call    0 returned 19
+        -:   42:
+        -:   43:    // for undo-redo functionalities
+       19:   44:    Medicine* medicine_undoRedo = return_medicine(service->repository, name, concentration);
+call    0 returned 19
+       19:   45:    Operation* operation = createOperation((undoRedoFct) remove_medicine, (undoRedoFct) add_medicine, medicine_undoRedo,
+call    0 returned 19
+        -:   46:                                           medicine_undoRedo);
+       19:   47:    push_undoRedoService(service->undoRedoService, operation);
+call    0 returned 19
+       19:   48:    return 1;
+        -:   49:}
+        -:   50:
+function service_remove_medicine called 2 returned 100% blocks executed 100%
+        2:   51:TInt service_remove_medicine(Service* service, char* name, TInt concentration){
+        -:   52:    // for undo-redo functionalities
+        2:   53:    Medicine* medicine_undoRedo = return_medicine(service->repository, name, concentration);
+        2:   53-block  0
+call    0 returned 2
+        2:   54:    Operation* operation = createOperation((undoRedoFct) add_medicine, (undoRedoFct) remove_medicine, medicine_undoRedo,
+call    0 returned 2
+        -:   55:                                           medicine_undoRedo);
+        2:   56:    push_undoRedoService(service->undoRedoService, operation);
+call    0 returned 2
+        -:   57:
+        2:   58:    if (has_medicine(service->repository, name, concentration) == -1)
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:   59:        return 0;
+        1:   59-block  0
+        1:   60:    remove_medicine(service->repository, name, concentration, 0, 0);
+        1:   60-block  0
+call    0 returned 1
+        -:   61:
+        -:   62:
+        1:   63:    return 1;
+        -:   64:}
+        -:   65:
+function service_update_medicine called 4 returned 100% blocks executed 90%
+        4:   66:TInt service_update_medicine(Service* service, char* name, TInt concentration, TInt new_quantity, TInt new_price){
+        -:   67:    // medicine before update
+        4:   68:    Medicine* medicine_undo = return_medicine(service->repository, name, concentration);
+        4:   68-block  0
+call    0 returned 4
+        -:   69:
+        4:   70:    if (has_medicine(service->repository, name, concentration) == -1)
+call    0 returned 4
+branch  1 taken 0 (fallthrough)
+branch  2 taken 4
+    #####:   71:        return 0;
+    %%%%%:   71-block  0
+        4:   72:    update_medicine(service->repository, name, concentration, new_quantity, new_price);
+        4:   72-block  0
+call    0 returned 4
+        -:   73:
+        -:   74:    // medicine after update
+        4:   75:    Medicine* medicine_redo = return_medicine(service->repository, name, concentration);
+call    0 returned 4
+        4:   76:    Operation* operation = createOperation((undoRedoFct) update_medicine, (undoRedoFct) update_medicine, medicine_undo,
+call    0 returned 4
+        -:   77:                                           medicine_redo);
+        4:   78:    push_undoRedoService(service->undoRedoService, operation);
+call    0 returned 4
+        4:   79:    return 1;
+        -:   80:}
+        -:   81:
+function compareMedicineByNameAscending called 1 returned 100% blocks executed 100%
+        1:   82:int compareMedicineByNameAscending(Medicine* medicine1, Medicine* medicine2){
+        1:   83:    return strcmp(get_name(medicine1), get_name(medicine2));
+        1:   83-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   84:}
+        -:   85:
+function service_list_medicines_by_name called 1 returned 100% blocks executed 100%
+        1:   86:DynamicArray* service_list_medicines_by_name(Service* service, char* string, TInt* lengthFilteredMedicines){
+        1:   87:    DynamicArray *medicine_list = repo_get_medicine_list(service->repository);
+        1:   87-block  0
+call    0 returned 1
+        1:   88:    TInt length = get_length(service->repository);
+call    0 returned 1
+        -:   89:
+        4:   90:    for (TInt i = 0; i < length; ++i) {
+        3:   90-block  0
+        4:   90-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:   91:        if (strstr(get_name(getElemFromPosition_DynamicArray(medicine_list, i)), string) != NULL) {
+        3:   91-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:   92:            (*lengthFilteredMedicines)++;
+        2:   92-block  0
+        -:   93:        }
+        -:   94:    }
+        1:   95:    DynamicArray* filtered_list = create_DynamicArray((int)(*lengthFilteredMedicines),
+        1:   95-block  0
+call    0 returned 1
+        -:   96:                                                      (destructionFunction) destroy_Medicine);
+        1:   97:    TInt indexFiltered = 0;
+        4:   98:    for (TInt i = 0; i < length; ++i) {
+        3:   98-block  0
+        4:   98-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:   99:        if (strstr(get_name(getElemFromPosition_DynamicArray(medicine_list, i)), string) != NULL) {
+        3:   99-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:  100:            addElem_DynamicArray(filtered_list, getElemFromPosition_DynamicArray(medicine_list, i));
+        2:  100-block  0
+call    0 returned 2
+call    1 returned 2
+        -:  101:        }
+        -:  102:    }
+        -:  103:    // sorted ascending by medicine name
+        1:  104:    sort_DynamicArray(filtered_list, (compareFunction) compareMedicineByNameAscending);
+        1:  104-block  0
+call    0 returned 1
+        1:  105:    return filtered_list;
+        -:  106:}
+        -:  107:
+function service_list_medicines_in_short_supply called 1 returned 100% blocks executed 100%
+        1:  108:DynamicArray* service_list_medicines_in_short_supply(Service* service, TInt* lengthShortSupplyMedicines, TInt quantity){
+        1:  109:    DynamicArray *medicine_list = repo_get_medicine_list(service->repository);
+        1:  109-block  0
+call    0 returned 1
+        1:  110:    TInt length = get_length(service->repository);
+call    0 returned 1
+        -:  111:
+        4:  112:    for (TInt i = 0; i < length; ++i) {
+        3:  112-block  0
+        4:  112-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:  113:        if (get_quantity(getElemFromPosition_DynamicArray(medicine_list, i)) < quantity) {
+        3:  113-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0
+        3:  114:            (*lengthShortSupplyMedicines)++;
+        3:  114-block  0
+        -:  115:        }
+        -:  116:    }
+        1:  117:    DynamicArray* short_supply_list = create_DynamicArray((int)(*lengthShortSupplyMedicines),
+        1:  117-block  0
+call    0 returned 1
+        -:  118:                                                          (destructionFunction) destroy_Medicine);
+        1:  119:    TInt indexShortSupply = 0;
+        4:  120:    for (TInt i = 0; i < length; ++i) {
+        3:  120-block  0
+        4:  120-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:  121:        if (get_quantity(getElemFromPosition_DynamicArray(medicine_list, i)) < quantity) {
+        3:  121-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0
+        3:  122:            addElem_DynamicArray(short_supply_list, getElemFromPosition_DynamicArray(medicine_list, i));
+        3:  122-block  0
+call    0 returned 3
+call    1 returned 3
+        -:  123:        }
+        -:  124:    }
+        1:  125:    return short_supply_list;
+        1:  125-block  0
+        -:  126:}

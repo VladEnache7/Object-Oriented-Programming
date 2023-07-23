@@ -1,0 +1,176 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/Repository.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Repository.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Repository.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <string.h>
+        -:    3:#include "Repository.h"
+        -:    4:
+function create_repository called 9 returned 100% blocks executed 100%
+        9:    5:Repository* create_repository(TInt capacity){
+        9:    6:    Repository* repository = (Repository*)malloc(sizeof(Repository));
+        9:    7:    repository->medicine_list = create_DynamicArray((int) capacity, (destructionFunction) destroy_Medicine);
+        9:    7-block  0
+call    0 returned 9
+        -:    8:    /*repository->length = 0;
+        -:    9:    repository->capacity = capacity;*/
+        9:   10:    return repository;
+        -:   11:}
+        -:   12:
+function repo_get_medicine_list called 17 returned 100% blocks executed 100%
+       17:   13:DynamicArray* repo_get_medicine_list(Repository* repository){
+       17:   14:    return repository->medicine_list;
+       17:   14-block  0
+        -:   15:}
+        -:   16:
+        -:   17:/*void set_medicine_list(Repository* repository, Medicine* new_medicine_list){
+        -:   18:    repository->medicine_list = new_medicine_list;
+        -:   19:}*/
+        -:   20:
+function get_length called 138 returned 100% blocks executed 100%
+      138:   21:TInt get_length(Repository* repository){
+      138:   22:    return getSize_DynamicArray(repository->medicine_list);
+      138:   22-block  0
+call    0 returned 138
+        -:   23:}
+        -:   24:
+        -:   25:/*void set_length(Repository* repository, TInt new_length){
+        -:   26:    repository->length = new_length;
+        -:   27:}*/
+        -:   28:
+        -:   29:
+        -:   30://TODO - I should use this one
+function destroy_repository called 7 returned 100% blocks executed 100%
+        7:   31:void destroy_repository(Repository *repository){
+        -:   32:    /*for (TInt i = 0; i < (*repository)->length; ++i) {
+        -:   33:        Medicine* medicine_list = (*repository)->medicine_list;
+        -:   34:        destroy_Medicine(&medicine_list[i]);
+        -:   35:    }
+        -:   36:    free((*repository)->medicine_list);*/
+        7:   37:    destroy_DynamicArray(repository->medicine_list);
+        7:   37-block  0
+call    0 returned 7
+        7:   38:    free(repository);
+        7:   39:    repository = NULL;
+        7:   40:}
+        -:   41:
+function has_medicine called 83 returned 100% blocks executed 100%
+       83:   42:TInt has_medicine(Repository *repository, char* name, TInt concentration){
+      136:   43:    for(TInt i = 0; i < get_length(repository); i++){
+       83:   43-block  0
+       53:   43-block  1
+      136:   43-block  2
+call    0 returned 136
+branch  1 taken 95
+branch  2 taken 41 (fallthrough)
+       95:   44:        if(strcmp(get_name(getElemFromPosition_DynamicArray(repository->medicine_list, i)), name) == 0 && get_concentration(getElemFromPosition_DynamicArray(repository->medicine_list, i)) == concentration){
+       95:   44-block  0
+call    0 returned 95
+call    1 returned 95
+branch  2 taken 48 (fallthrough)
+branch  3 taken 47
+       48:   44-block  1
+call    4 returned 48
+call    5 returned 48
+branch  6 taken 42 (fallthrough)
+branch  7 taken 6
+       42:   45:            return i;
+       42:   45-block  0
+        -:   46:        }
+        -:   47:    }
+       41:   48:    return -1;
+       41:   48-block  0
+        -:   49:}
+        -:   50:
+function return_medicine called 29 returned 100% blocks executed 100%
+       29:   51:Medicine* return_medicine(Repository *repository, char* name, TInt concentration){
+       29:   52:    TInt indexMedicine = has_medicine(repository, name, concentration);
+       29:   52-block  0
+call    0 returned 29
+       29:   53:    if (indexMedicine == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 28
+        1:   54:        return NULL;
+        1:   54-block  0
+       28:   55:    return getElemFromPosition_DynamicArray(repository->medicine_list, indexMedicine);
+       28:   55-block  0
+call    0 returned 28
+        -:   56:}
+        -:   57:
+        -:   58:/*Repository* resize_repository(Repository* repository){
+        -:   59:    TInt auxCapacity = repository->capacity * 2;
+        -:   60:    TInt auxLength = repository->length;
+        -:   61:    repository->medicine_list = realloc(repository->medicine_list, auxCapacity * sizeof(Medicine));
+        -:   62://    newRepository->length = repository->length;
+        -:   63:    repository->capacity = auxCapacity;
+        -:   64:    repository->length = auxLength;
+        -:   65:    return repository;
+        -:   66:}*/
+        -:   67:
+function add_medicine called 21 returned 100% blocks executed 100%
+       21:   68:Repository* add_medicine(Repository *repository, char* name, TInt concentration, TInt quantity, TInt price){
+       21:   69:    TInt indexMedicine = has_medicine(repository, name, concentration);
+       21:   69-block  0
+call    0 returned 21
+        -:   70:    /*if(repository->length == repository->capacity)
+        -:   71:        repository = resize_repository(repository);*/
+        -:   72:
+        -:   73:    //If a product that already exists is added, its quantity will be updated (the new quantity is added to the existing one)
+       21:   74:    if(indexMedicine != -1){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 20
+        1:   75:        add_quantity(getElemFromPosition_DynamicArray(repository->medicine_list, indexMedicine), quantity);
+        1:   75-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   76:    }
+        -:   77:    else{
+       20:   78:        Medicine* medicine = create_Medicine(name, concentration, quantity, price);
+       20:   78-block  0
+call    0 returned 20
+       20:   79:        addElem_DynamicArray(repository->medicine_list, medicine);
+call    0 returned 20
+        -:   80:    }
+       21:   81:    return repository;
+       21:   81-block  0
+        -:   82:}
+        -:   83:
+function remove_medicine called 3 returned 100% blocks executed 80%
+        3:   84:void remove_medicine(Repository *repository, char* name, TInt concentration, __attribute__((unused)) TInt quantity, __attribute__((unused)) TInt price){
+        3:   85:    TInt indexMedicine = has_medicine(repository, name, concentration);
+        3:   85-block  0
+call    0 returned 3
+        -:   86://    Medicine* medicine = getElemFromPosition_DynamicArray(repository->medicine_list, indexMedicine);
+        3:   87:    if(indexMedicine == -1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:   88:        return;
+    %%%%%:   88-block  0
+        3:   89:    removeElem_DynamicArray(repository->medicine_list, (int) indexMedicine);
+        3:   89-block  0
+call    0 returned 3
+        -:   90:    /*for(TInt i = indexMedicine; i < repository->length - 1; i++){
+        -:   91:        repository->medicine_list[i] = repository->medicine_list[i + 1];
+        -:   92:    }
+        -:   93:    repository->length--;*/
+        -:   94:}
+        -:   95:
+function update_medicine called 4 returned 100% blocks executed 88%
+        4:   96:void update_medicine(Repository *repository, char* name, TInt concentration, TInt newQuantity, TInt newPrice){
+        4:   97:    TInt indexMedicine = has_medicine(repository, name, concentration);
+        4:   97-block  0
+call    0 returned 4
+        4:   98:    if(indexMedicine == -1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:   99:        return;
+    %%%%%:   99-block  0
+        4:  100:    set_quantity(getElemFromPosition_DynamicArray(repository->medicine_list, indexMedicine), newQuantity);
+        4:  100-block  0
+call    0 returned 4
+call    1 returned 4
+        4:  101:    set_price(getElemFromPosition_DynamicArray(repository->medicine_list, indexMedicine), newPrice);
+call    0 returned 4
+call    1 returned 4
+        -:  102:}
+        -:  103:

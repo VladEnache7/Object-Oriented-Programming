@@ -1,0 +1,22 @@
+# ninja log v5
+14	814	7058437355750080	CMakeFiles/a89_912_enache_vlad.dir/UserInterface.cpp.obj	e9bba665606e40fd
+7	4484	7058460160338283	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+13	540	7057686401914034	CMakeFiles/a89_912_enache_vlad.dir/Exceptions.cpp.obj	dae7be23ded73423
+3	890	7057686405412572	CMakeFiles/a89_912_enache_vlad.dir/Dog.cpp.obj	572f9c6ee8a75981
+53	875	7057686405263740	CMakeFiles/a89_912_enache_vlad.dir/RepoShelterDogs.cpp.obj	b76be158beedbab
+27	1066	7057686407187472	CMakeFiles/a89_912_enache_vlad.dir/ServiceAdmin.cpp.obj	e6c7bee04aefe7b6
+35	686	7058437354476483	CMakeFiles/a89_912_enache_vlad.dir/Tests.cpp.obj	940e615c57c6ed96
+21	782	7058437355563826	CMakeFiles/a89_912_enache_vlad.dir/ServiceUser.cpp.obj	1a71726eafab2778
+68	1104	7057686407584834	CMakeFiles/a89_912_enache_vlad.dir/RepoAdoptedDogs.cpp.obj	6af0564d52210c45
+4294	5052	7058489287370552	a89_912_enache_vlad.exe	936e2f5e090f0712
+5	4294	7058489282988824	CMakeFiles/a89_912_enache_vlad.dir/GUI.cpp.obj	b963d0efec5cedf1
+5	3258	7070493897077639	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+3259	3981	7070493901900895	a89_912_enache_vlad.exe	936e2f5e090f0712
+9	3482	7070498988389347	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+3483	4113	7070498992051734	a89_912_enache_vlad.exe	936e2f5e090f0712
+9	3497	7070500198302059	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+3497	4116	7070500201962210	a89_912_enache_vlad.exe	936e2f5e090f0712
+8	3564	7070501644193873	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+3565	4117	7070501647470267	a89_912_enache_vlad.exe	936e2f5e090f0712
+5	3420	7070502958358385	CMakeFiles/a89_912_enache_vlad.dir/main.cpp.obj	2da6465e5cd1a009
+3420	3987	7070502961688262	a89_912_enache_vlad.exe	936e2f5e090f0712

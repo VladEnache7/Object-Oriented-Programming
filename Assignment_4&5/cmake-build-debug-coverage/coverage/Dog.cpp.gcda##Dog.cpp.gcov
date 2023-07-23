@@ -1,0 +1,233 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/Dog.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/Dog.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/Dog.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Admin on 26-Mar-23.
+        -:    3://
+        -:    4:
+        -:    5:#include "Dog.h"
+        -:    6:// default constructor
+function _ZN3DogC2Ev called 423 returned 100% blocks executed 62%
+      423:    7:Dog::Dog() {
+      423:    7-block  0
+call    0 returned 423
+call    1 returned 423
+call    2 returned 423
+    $$$$$:    7-block  1
+call    3 never executed
+    $$$$$:    7-block  2
+call    4 never executed
+    $$$$$:    7-block  3
+call    5 never executed
+      423:    8:    this->breed = "";
+call    0 returned 423
+branch  1 taken 423 (fallthrough)
+branch  2 taken 0 (throw)
+      423:    9:    this->name = "";
+      423:    9-block  0
+call    0 returned 423
+branch  1 taken 423 (fallthrough)
+branch  2 taken 0 (throw)
+      423:   10:    this->age = 0;
+      423:   11:    this->photograph = "";
+      423:   11-block  0
+call    0 returned 423
+branch  1 taken 423 (fallthrough)
+branch  2 taken 0 (throw)
+      423:   12:}
+      423:   12-block  0
+        -:   13:
+        -:   14:// constructor with parameters
+function _ZN3DogC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 24 returned 100% blocks executed 62%
+       24:   15:Dog::Dog(const std::string &name, const std::string &breed, int age, const std::string &photograph) {
+       24:   15-block  0
+call    0 returned 24
+call    1 returned 24
+call    2 returned 24
+    $$$$$:   15-block  1
+call    3 never executed
+    $$$$$:   15-block  2
+call    4 never executed
+    $$$$$:   15-block  3
+call    5 never executed
+       24:   16:    this->breed = breed;
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
+branch  2 taken 0 (throw)
+       24:   17:    this->name = name;
+       24:   17-block  0
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
+branch  2 taken 0 (throw)
+       24:   18:    this->age = age;
+       24:   19:    this->photograph = photograph;
+       24:   19-block  0
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
+branch  2 taken 0 (throw)
+       24:   20:}
+       24:   20-block  0
+        -:   21:
+        -:   22:// copy constructor is used because there are no pointers in the clas
+function _ZN3DogC2ERKS_ called 8 returned 100% blocks executed 62%
+        8:   23:Dog::Dog(const Dog &otherDog) = default;
+        8:   23-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:   23-block  1
+call    4 returned 8
+branch  5 taken 8 (fallthrough)
+branch  6 taken 0 (throw)
+        8:   23-block  2
+    $$$$$:   23-block  3
+call    7 never executed
+    $$$$$:   23-block  4
+call    8 never executed
+        -:   24:
+        -:   25:// the default destructor is used because there are no pointers in the class
+function _ZN3DogD2Ev called 455 returned 100% blocks executed 100%
+      455:   26:Dog::~Dog() {
+      455:   26-block  0
+call    0 returned 455
+call    1 returned 455
+call    2 returned 455
+        -:   27:
+      455:   28:}
+        -:   29:
+        -:   30:// the default operator = is used because there are no pointers in the class
+function _ZN3DogaSERKS_ called 45 returned 100% blocks executed 100%
+       45:   31:Dog& Dog::operator=(const Dog &otherDog) = default;
+       45:   31-block  0
+call    0 returned 45
+call    1 returned 45
+call    2 returned 45
+        -:   32:
+        -:   33:/**
+        -:   34: * Getter for the breed of the dog
+        -:   35: * @return the breed of the dog
+        -:   36: */
+function _ZNK3Dog8getBreedB5cxx11Ev called 7 returned 100% blocks executed 100%
+        7:   37:std::string Dog::getBreed() const { // const means that the function will not modify the object
+        7:   38:    return this->breed;
+        7:   38-block  0
+call    0 returned 7
+        -:   39:}
+        -:   40:
+        -:   41:/**
+        -:   42: * Getter for the name of the dog
+        -:   43: * @return the name of the dog
+        -:   44: */
+function _ZNK3Dog7getNameB5cxx11Ev called 19 returned 100% blocks executed 100%
+       19:   45:std::string Dog::getName() const {
+       19:   46:    return this->name;
+       19:   46-block  0
+call    0 returned 19
+        -:   47:}
+        -:   48:
+        -:   49:/**
+        -:   50: * Getter for the age of the dog
+        -:   51: * @return the age of the dog
+        -:   52: */
+function _ZNK3Dog6getAgeEv called 7 returned 100% blocks executed 100%
+        7:   53:int Dog::getAge() const {
+        7:   54:    return this->age;
+        7:   54-block  0
+        -:   55:}
+        -:   56:
+        -:   57:/**
+        -:   58: * Getter for the photograph of the dog
+        -:   59: * @return the photograph of the dog
+        -:   60: */
+function _ZNK3Dog13getPhotographB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:   61:std::string Dog::getPhotograph() const {
+        4:   62:    return this->photograph;
+        4:   62-block  0
+call    0 returned 4
+        -:   63:}
+        -:   64:
+        -:   65:/**
+        -:   66: * Setter for the breed of the dog
+        -:   67: * @param newBreed - the new breed of the dog
+        -:   68: */
+function _ZN3Dog8setBreedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   69:void Dog::setBreed(const std::string &newBreed) {
+        1:   70:    this->breed = newBreed;
+        1:   70-block  0
+call    0 returned 1
+        1:   71:}
+        -:   72:
+        -:   73:/**
+        -:   74: * Setter for the name of the dog
+        -:   75: * @param newName - the new name of the dog
+        -:   76: */
+function _ZN3Dog7setNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 100%
+        3:   77:void Dog::setName(const std::string &newName) {
+        3:   78:    this->name = newName;
+        3:   78-block  0
+call    0 returned 3
+        3:   79:}
+        -:   80:
+        -:   81:/**
+        -:   82: * Setter for the age of the dog
+        -:   83: * @param newAge - the new age of the dog
+        -:   84: */
+function _ZN3Dog6setAgeEi called 1 returned 100% blocks executed 100%
+        1:   85:void Dog::setAge(const int newAge) {
+        1:   86:    this->age = newAge;
+        1:   87:}
+        -:   88:
+        -:   89:/**
+        -:   90: * Setter for the photograph of the dog
+        -:   91: * @param newPhotograph - the new photograph of the dog
+        -:   92: */
+function _ZN3Dog13setPhotographERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   93:void Dog::setPhotograph(const std::string &newPhotograph) {
+        1:   94:    this->photograph = newPhotograph;
+        1:   94-block  0
+call    0 returned 1
+        1:   95:}
+        -:   96:
+        -:   97:/**
+        -:   98: * Overload the == operator in order to compare two dogs
+        -:   99: * @param otherDog - the other dog
+        -:  100: * @return true if the two dogs are equal, false otherwise
+        -:  101: */
+function _ZNK3DogeqERKS_ called 17 returned 100% blocks executed 100%
+       17:  102:bool Dog::operator==(const Dog &otherDog) const {
+       17:  103:    return this->breed == otherDog.breed && this->name == otherDog.name && this->age == otherDog.age && this->photograph == otherDog.photograph;
+       17:  103-block  0
+call    0 returned 17
+branch  1 taken 16 (fallthrough)
+branch  2 taken 1
+       16:  103-block  1
+call    3 returned 16
+branch  4 taken 16 (fallthrough)
+branch  5 taken 0
+       16:  103-block  2
+branch  6 taken 16 (fallthrough)
+branch  7 taken 0
+       16:  103-block  3
+call    8 returned 16
+branch  9 taken 16 (fallthrough)
+branch 10 taken 0
+       16:  103-block  4
+        1:  103-block  5
+       17:  103-block  6
+        -:  104:}
+        -:  105:
+        -:  106://TODO: overload the << operator in order to print a dogToBePrinted
+        -:  107:/*
+        -:  108:std::istream &operator>>(std::istream &output, const Dog &dogToBePrinted) {
+        -:  109:    output << "Breed: " << dogToBePrinted.getBreed() << "\n";
+        -:  110:
+        -:  111:}
+        -:  112:
+        -:  113:std::ostream &operator<<(std::ostream &output, const Dog &dogToBePrinted) {
+        -:  114:    output << "Breed: " << dogToBePrinted.getBreed() << "
+        -:  115:
+        -:  116:}
+        -:  117:
+        -:  118:*/

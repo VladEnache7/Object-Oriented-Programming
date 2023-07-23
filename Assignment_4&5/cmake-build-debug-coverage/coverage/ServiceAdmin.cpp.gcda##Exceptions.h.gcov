@@ -1,0 +1,30 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/Exceptions.h
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/ServiceAdmin.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/ServiceAdmin.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <exception>
+        -:    3:#include <string>
+        -:    4:#include <utility>
+        -:    5:
+        -:    6:class Exception : public std::exception {
+        -:    7:private:
+        -:    8:    std::string message;
+        -:    9:public:
+function _ZN9ExceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   10:    explicit Exception(std::string  setMessage) : message{std::move( setMessage )} {}
+        4:   10-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+        -:   11:
+function _ZNK9Exception4whatEv called 0 returned 0% blocks executed 0%
+    #####:   12:    const char* what() const noexcept override {
+    #####:   13:        return message.c_str();
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:    }
+        -:   15:};
+        -:   16:
+        -:   17:
+        -:   18:

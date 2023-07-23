@@ -1,0 +1,170 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/ServiceAdmin.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/ServiceAdmin.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/ServiceAdmin.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Admin on 26-Mar-23.
+        -:    3://
+        -:    4:#include "ServiceAdmin.h"
+        -:    5:#include "Exceptions.h"
+        -:    6:
+        -:    7:
+function _ZN12ServiceAdminC2ER15RepoShelterDogs called 2 returned 100% blocks executed 100%
+        2:    8:ServiceAdmin::ServiceAdmin(RepoShelterDogs& repoShelterDogs) : repoShelter(repoShelterDogs) {
+        -:    9:    // nothing else to do
+        2:   10:}
+        -:   11:
+function _ZN12ServiceAdminD2Ev called 2 returned 100% blocks executed 100%
+        2:   12:ServiceAdmin::~ServiceAdmin() = default;
+        -:   13:// if the above gives an error, I will use the commented code
+        -:   14:/*ServiceAdmin::~ServiceAdmin(){
+        -:   15:
+        -:   16:}*/
+        -:   17:
+        -:   18:
+function _ZN12ServiceAdmin6addDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 3 returned 67% blocks executed 75%
+        3:   19:void ServiceAdmin::addDog(const std::string &name, const std::string &breed, int age, const std::string &photograph) {
+        -:   20:    // validate the dog before adding it - see if the dog already exists
+        3:   21:    if (this->getDogPositionByName(name) != -1) {
+        3:   21-block  0
+call    0 returned 3
+branch  1 taken 1 (fallthrough)
+branch  2 taken 2
+        1:   22:        throw Exception("A dog with this name already exists and cannot be added! (consider adding a number at the end of the name)");
+        1:   22-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   22-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   22-block  2
+call    9 never executed
+        -:   23:    }
+        -:   24:
+        -:   25:    // then simply add the dog
+        2:   26:    this->repoShelter.addDog(name, breed, age, photograph);
+        2:   26-block  0
+call    0 returned 2
+        2:   27:}
+        -:   28:
+function _ZN12ServiceAdmin9deleteDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 75%
+        2:   29:void ServiceAdmin::deleteDog(const std::string &name) {
+        -:   30:    // validate the dog before deleting it - see if the dog exists
+        2:   31:    int position = this->getDogPositionByName(name);
+        2:   31-block  0
+call    0 returned 2
+        2:   32:    if (position == -1) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   33:        throw Exception("The dog does not exist and cannot be deleted!");
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   33-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   33-block  2
+call    9 never executed
+        -:   34:    }
+        -:   35:    // then simply delete the dog
+        1:   36:    this->repoShelter.deleteDog(name);
+        1:   36-block  0
+call    0 returned 1
+        1:   37:}
+        -:   38:
+function _ZN12ServiceAdmin9updateDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 2 returned 50% blocks executed 75%
+        2:   39:void ServiceAdmin::updateDog(const std::string &name, const std::string &newBreed, int newAge, const std::string &newPhotograph) {
+        -:   40:    // validate the dog before updating it - see if the dog exists
+        2:   41:    if (this->getDogPositionByName(name) == -1) {
+        2:   41-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:   42:        throw Exception("The dog with this name does not exist and cannot be updated!");
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   42-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   42-block  2
+call    9 never executed
+        -:   43:    }
+        -:   44:    // then simply update the dog
+        1:   45:    this->repoShelter.updateDog(name, newBreed, newAge, newPhotograph);
+        1:   45-block  0
+call    0 returned 1
+        1:   46:}
+        -:   47:
+function _ZNK12ServiceAdmin7getDogsEv called 5 returned 100% blocks executed 100%
+        5:   48:DynamicVector<Dog> ServiceAdmin::getDogs() const {
+        5:   49:    return this->repoShelter.getDogs();
+        5:   49-block  0
+call    0 returned 5
+        -:   50:}
+        -:   51:
+function _ZN12ServiceAdmin14getDogPositionERK3Dog called 1 returned 100% blocks executed 100%
+        1:   52:int ServiceAdmin::getDogPosition(const Dog &dog) {
+        1:   53:    return this->repoShelter.getDogPosition(dog);
+        1:   53-block  0
+call    0 returned 1
+        -:   54:}
+        -:   55:
+function _ZN12ServiceAdmin20getDogPositionByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 9 returned 100% blocks executed 100%
+        9:   56:int ServiceAdmin::getDogPositionByName(const std::string &name) {
+        9:   57:    return this->repoShelter.getDogPositionByName(name);
+        9:   57-block  0
+call    0 returned 9
+        -:   58:}
+        -:   59:
+function _ZN12ServiceAdmin12getDogByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 71%
+        2:   60:Dog ServiceAdmin::getDogByName(const std::string &name) {
+        2:   61:    int position = this->getDogPositionByName(name);
+        2:   61-block  0
+call    0 returned 2
+        2:   62:    if (position == -1) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   63:        throw Exception("The dog does not exist!");
+        1:   63-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   63-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   63-block  2
+call    9 never executed
+        -:   64:    }
+        2:   65:    return this->repoShelter.getDogs()[position];
+        1:   65-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   65-block  1
+call    5 returned 1
+        1:   65-block  2
+    $$$$$:   65-block  3
+call    6 never executed
+        -:   66:}

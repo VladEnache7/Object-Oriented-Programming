@@ -1,0 +1,164 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/ServiceUser.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/ServiceUser.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/ServiceUser.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "ServiceUser.h"
+        -:    3:
+function _ZN11ServiceUserC2ER15RepoShelterDogsR15RepoAdoptedDogs called 1 returned 100% blocks executed 100%
+        1:    4:ServiceUser::ServiceUser(RepoShelterDogs &repoShelter, RepoAdoptedDogs &repoAdopted) : repoShelter(repoShelter),
+        1:    5:                                                                                               repoAdopted(repoAdopted) {}
+        -:    6:
+function _ZN11ServiceUser14getDogsShelterEv called 6 returned 100% blocks executed 100%
+        6:    7:std::vector<Dog> ServiceUser::getDogsShelter() {
+        6:    8:    return this->repoShelter.getDogs();
+        6:    8-block  0
+call    0 returned 6
+        -:    9:}
+        -:   10:
+function _ZN11ServiceUser14getDogsAdoptedEv called 3 returned 100% blocks executed 100%
+        3:   11:std::vector<Dog> ServiceUser::getDogsAdopted() {
+        3:   12:    return this->repoAdopted.getDogs();
+        3:   12-block  0
+call    0 returned 3
+        -:   13:}
+        -:   14:
+function _ZN11ServiceUser15getDogsFilteredERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 1 returned 100% blocks executed 66%
+        1:   15:std::vector<Dog> ServiceUser::getDogsFiltered(const std::string &breed, int age) {
+        2:   16:    std::vector<Dog> unfilteredDogs = getDogsShelter();
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16-block  1
+call    3 returned 1
+    $$$$$:   16-block  2
+call    4 never executed
+        1:   17:    std::vector<Dog> filteredDogs;
+        1:   17-block  0
+call    0 returned 1
+        4:   18:    for (const auto& currentDog : unfilteredDogs) {
+call    0 returned 1
+call    1 returned 1
+        4:   18-block  0
+call    2 returned 4
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        3:   18-block  1
+call    5 returned 3
+        3:   18-block  2
+call    6 returned 3
+       3*:   19:        if ((currentDog.getBreed() == breed  || breed.empty()) && currentDog.getAge() < age) {
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   19-block  0
+call    3 returned 3
+branch  4 taken 0 (fallthrough)
+branch  5 taken 3
+    %%%%%:   19-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        3:   19-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   19-block  3
+branch 12 taken 3 (fallthrough)
+branch 13 taken 0
+        3:   19-block  4
+    %%%%%:   19-block  5
+        3:   19-block  6
+branch 14 taken 3 (fallthrough)
+branch 15 taken 0
+        3:   19-block  7
+call   16 returned 3
+        3:   19-block  8
+branch 17 taken 3 (fallthrough)
+branch 18 taken 0
+    $$$$$:   19-block  9
+branch 19 never executed
+branch 20 never executed
+    $$$$$:   19-block 10
+call   21 never executed
+    $$$$$:   19-block 11
+        3:   20:            filteredDogs.push_back(currentDog);
+        3:   20-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   21:        }
+        -:   22:    }
+        2:   23:    return filteredDogs;
+        1:   23-block  0
+        1:   23-block  1
+        -:   24:}
+        -:   25:
+function _ZN11ServiceUser13getCurrentDogEv called 2 returned 100% blocks executed 80%
+        2:   26:Dog ServiceUser::getCurrentDog() {
+        -:   27:    // I have made the check in the UI
+        4:   28:    return this->getDogsShelter()[this->indexCurrentDog];
+        2:   28-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   28-block  1
+call    5 returned 2
+        2:   28-block  2
+    $$$$$:   28-block  3
+call    6 never executed
+        -:   29:}
+        -:   30:
+function _ZN11ServiceUser14goToTheNextDogEv called 1 returned 100% blocks executed 100%
+        1:   31:void ServiceUser::goToTheNextDog() {
+        -:   32:    // if the index is the last one, then we go back to the first one
+        1:   33:    this->indexCurrentDog = (this->indexCurrentDog + 1) % this->getDogsShelter().size();
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:   34:}
+        -:   35:
+function _ZN11ServiceUser8adoptDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 71%
+        1:   36:void ServiceUser::adoptDog(const std::string &name) {
+        2:   37:    Dog dog = this->repoShelter.getDogByName(name);
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   37-block  1
+call    3 returned 1
+    $$$$$:   37-block  2
+call    4 never executed
+        -:   38:    // call the other adoptDog function
+        1:   39:    this->adoptDog(dog);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40:}
+        -:   41:
+function _ZN11ServiceUser8adoptDogERK3Dog called 1 returned 100% blocks executed 75%
+        1:   42:void ServiceUser::adoptDog(const Dog& dog) {
+        -:   43:    // remove dog from shelter
+        1:   44:    this->repoShelter.deleteDog(dog.getName());
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   44-block  1
+call    4 returned 1
+    $$$$$:   44-block  2
+call    5 never executed
+        -:   45:    // add dog to adopted list
+        1:   46:    this->repoAdopted.addDog(dog);
+call    0 returned 1
+        -:   47:
+        1:   48:}
+        -:   49:
+function _ZN11ServiceUserD2Ev called 1 returned 100% blocks executed 100%
+        1:   50:ServiceUser::~ServiceUser() = default;

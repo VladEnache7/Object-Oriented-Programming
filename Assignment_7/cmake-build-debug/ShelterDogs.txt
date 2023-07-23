@@ -1,0 +1,28 @@
+Max
+Golden Retriever
+2
+https://en.wikipedia.org/wiki/File:Golden_Retriever_Carlos_%2810581910556%29.jpg
+Lucy
+Beagle
+1
+https://en.wikipedia.org/wiki/File:Beagle.jpg
+Molly
+Poodle
+5
+https://en.wikipedia.org/wiki/File:Toy_Poodle.jpg
+Daisy
+Chihuahua
+3
+https://en.wikipedia.org/wiki/File:Chihuahua_(4479047538).jpg
+Rocky
+Pug
+2
+https://en.wikipedia.org/wiki/File:Pug_dog.jpg
+Buddy
+Boxer
+4
+https://en.wikipedia.org/wiki/File:Boxer_(dog).jpg
+Maggie
+Siberian Husky
+1
+https://en.wikipedia.org/wiki/File:Siberian_Husky.jpg

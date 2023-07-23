@@ -1,0 +1,259 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/DynamicVector.h
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/UserInterface.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/UserInterface.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:template <typename TypeOfElement> class DynamicVector {
+        -:    4:private:
+        -:    5:    // the array of elements
+        -:    6:    TypeOfElement* elements;
+        -:    7:    // the current size of the vector
+        -:    8:    int size{};
+        -:    9:    // the current capacity of the vector
+        -:   10:    int capacity{};
+        -:   11:    // Resizes is private because we don't want the user to be able to change the capacity of the vector
+        -:   12:    void resize(int newCapacity);
+        -:   13:    
+        -:   14:public:
+        -:   15:    /// Constructors and destructor
+        -:   16:    // Constructor
+        -:   17:    explicit DynamicVector(int capacity = 10); // explicit keyword is used with a constructor to prevent it from performing implicit conversions
+        -:   18:    // Copy constructor
+        -:   19:    DynamicVector(const DynamicVector& other); // const keyword is used to prevent the function from modifying the dynamic vector
+        -:   20:    // Operator =
+        -:   21:    DynamicVector& operator=(const DynamicVector& other);
+        -:   22:    // Destructor
+        -:   23:    ~DynamicVector();
+        -:   24:
+        -:   25:    /// Functions
+        -:   26:    void addElement(const TypeOfElement& newElement); // const keyword is used to prevent the function from modifying the object even though is transmitted by reference
+        -:   27:    void addElementToPosition(const TypeOfElement& newElement, int position);
+        -:   28:    void removeCertainElement(const TypeOfElement& element);
+        -:   29:    TypeOfElement* findElement(const TypeOfElement& element);
+        -:   30:    void removeElementFromPosition(int position);
+        -:   31:    
+        -:   32:
+        -:   33:    /// Operators
+        -:   34:    // Overload the subscript operator for non-const objects
+        -:   35:    TypeOfElement& operator[](int position);
+        -:   36:    // Overload the subscript operator for const objects
+        -:   37:    const TypeOfElement& operator[](int position) const;
+        -:   38:    void setElement(int position, const TypeOfElement& newElement);
+        -:   39:
+        -:   40:    /// Getters
+        -:   41:    // Returns the size of the vector
+        -:   42:    int getSize() const;
+        -:   43:    // Returns the capacity of the vector
+        -:   44:    int getCapacity() const;
+        -:   45:};
+        -:   46:
+        -:   47:// Constructor
+        -:   48:template<typename TypeOfElement>
+        -:   49:DynamicVector<TypeOfElement>::DynamicVector(int capacity):
+        -:   50:    size{0}, capacity{capacity} // member initializer list
+        -:   51:{
+        -:   52:    this->elements = new TypeOfElement[capacity];
+        -:   53:
+        -:   54:}
+        -:   55:
+        -:   56:// Copy constructor
+        -:   57:template<typename TypeOfElement>
+        -:   58:DynamicVector<TypeOfElement>::DynamicVector(const DynamicVector &other) {
+        -:   59:    this->size = other.size;
+        -:   60:    this->capacity = other.capacity;
+        -:   61:    this->elements = new TypeOfElement[this->capacity];
+        -:   62:    for (int i = 0; i < this->size; i++)
+        -:   63:        this->elements[i] = other.elements[i];
+        -:   64:
+        -:   65:}
+        -:   66:
+        -:   67:// Operator =
+        -:   68:template<typename TypeOfElement>
+        -:   69:DynamicVector<TypeOfElement> &DynamicVector<TypeOfElement>::operator=(const DynamicVector &other) {
+        -:   70:    if (this != &other) {
+        -:   71:        this->size = other.size;
+        -:   72:        this->capacity = other.capacity;
+        -:   73:        delete[] this->elements;
+        -:   74:        this->elements = new TypeOfElement[this->capacity];
+        -:   75:        for (int i = 0; i < this->size; i++)
+        -:   76:            this->elements[i] = other.elements[i];
+        -:   77:    }
+        -:   78:    return *this;
+        -:   79:}
+        -:   80:
+        -:   81:template<typename TypeOfElement>
+function _ZN13DynamicVectorI3DogED2Ev called 0 returned 0% blocks executed 0%
+    #####:   82:DynamicVector<TypeOfElement>::~DynamicVector() {
+    #####:   83:    delete[] this->elements;
+    %%%%%:   83-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   83-block  1
+    %%%%%:   83-block  2
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   83-block  3
+call    4 never executed
+    %%%%%:   83-block  4
+call    5 never executed
+        -:   84:
+    #####:   85:}
+        -:   86:
+        -:   87:template<typename TypeOfElement>
+        -:   88:void DynamicVector<TypeOfElement>::addElement(const TypeOfElement &newElement) {
+        -:   89:    if (this->size == this->capacity)
+        -:   90:        this->resize(this->capacity * 2);
+        -:   91:    this->elements[this->size] = newElement;
+        -:   92:    this->size++;
+        -:   93:
+        -:   94:}
+        -:   95:
+        -:   96:template<typename TypeOfElement>
+function _ZN13DynamicVectorI3DogE6resizeEi called 0 returned 0% blocks executed 0%
+    #####:   97:void DynamicVector<TypeOfElement>::resize(int newCapacity) {
+    #####:   98:    auto* newData = new TypeOfElement[newCapacity];
+    %%%%%:   98-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   98-block  1
+    %%%%%:   98-block  2
+    %%%%%:   98-block  3
+call    2 never executed
+    %%%%%:   98-block  4
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   98-block  5
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   98-block  6
+    $$$$$:   98-block  7
+    $$$$$:   98-block  8
+call    8 never executed
+    $$$$$:   98-block  9
+call    9 never executed
+        -:   99:    // Copy the elements from the old array to the new one
+    #####:  100:    for (int i = 0; i < this->size; i++)
+    %%%%%:  100-block  0
+    %%%%%:  100-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  101:        newData[i] = this->elements[i];
+    %%%%%:  101-block  0
+call    0 never executed
+    #####:  102:    this->capacity = newCapacity;
+    #####:  103:    delete[] this->elements;    // delete the old array
+    %%%%%:  103-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  103-block  1
+    %%%%%:  103-block  2
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  103-block  3
+call    4 never executed
+    %%%%%:  103-block  4
+call    5 never executed
+    #####:  104:    this->elements = newData;   // make the elements pointer point to the new array
+    #####:  105:}
+    %%%%%:  105-block  0
+        -:  106:
+        -:  107:template<typename TypeOfElement>
+function _ZNK13DynamicVectorI3DogE7getSizeEv called 0 returned 0% blocks executed 0%
+    #####:  108:int DynamicVector<TypeOfElement>::getSize() const {
+    #####:  109:    return this->size;
+    %%%%%:  109-block  0
+        -:  110:}
+        -:  111:
+        -:  112:template<typename TypeOfElement>
+        -:  113:int DynamicVector<TypeOfElement>::getCapacity() const {
+        -:  114:    return this->capacity;
+        -:  115:}
+        -:  116:
+        -:  117:template<typename TypeOfElement>
+function _ZN13DynamicVectorI3DogEixEi called 0 returned 0% blocks executed 0%
+    #####:  118:TypeOfElement &DynamicVector<TypeOfElement>::operator[](int position) {
+    #####:  119:    return this->elements[position];
+    %%%%%:  119-block  0
+        -:  120:}
+        -:  121:
+        -:  122:template<typename TypeOfElement>
+        -:  123:const TypeOfElement &DynamicVector<TypeOfElement>::operator[](int position) const {
+        -:  124:    return this->elements[position];
+        -:  125:}
+        -:  126:
+        -:  127:// overwrite operator[] to set an element at a given position
+        -:  128:template<typename TypeOfElement>
+        -:  129:void DynamicVector<TypeOfElement>:: setElement(int position, const TypeOfElement& newElement) {
+        -:  130:    this->elements[position] = newElement;
+        -:  131:}
+        -:  132:
+        -:  133:
+        -:  134:
+        -:  135:template<typename TypeOfElement>
+function _ZN13DynamicVectorI3DogE20removeCertainElementERKS0_ called 0 returned 0% blocks executed 0%
+    #####:  136:void DynamicVector<TypeOfElement>::removeCertainElement(const TypeOfElement &element) {
+    #####:  137:    int position = 0;
+    #####:  138:    for (int i = 0; i < this->size; i++)
+    %%%%%:  138-block  0
+    %%%%%:  138-block  1
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  138-block  2
+    #####:  139:        if (this->elements[i] == element)
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  140:            position = i;
+    %%%%%:  140-block  0
+    #####:  141:    this->removeElementFromPosition(position);
+    %%%%%:  141-block  0
+call    0 never executed
+        -:  142:
+    #####:  143:}
+        -:  144:
+        -:  145:template<typename TypeOfElement>
+function _ZN13DynamicVectorI3DogE25removeElementFromPositionEi called 0 returned 0% blocks executed 0%
+    #####:  146:void DynamicVector<TypeOfElement>::removeElementFromPosition(int position) {
+    #####:  147:    for (int i = position; i < this->size - 1; i++)
+    %%%%%:  147-block  0
+    %%%%%:  147-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  148:        this->elements[i] = this->elements[i + 1];
+    %%%%%:  148-block  0
+call    0 never executed
+    #####:  149:    this->size--;
+        -:  150:    // If the vector is 1/4 full, resize it to half the capacity
+    #####:  151:    if (this->size == this->capacity / 4)
+    %%%%%:  151-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  152:        this->resize(this->capacity / 2);
+    %%%%%:  152-block  0
+call    0 never executed
+    #####:  153:}
+        -:  154:
+        -:  155:template<typename TypeOfElement>
+        -:  156:TypeOfElement *DynamicVector<TypeOfElement>::findElement(const TypeOfElement &element) {
+        -:  157:    for (int i = 0; i < this->size; i++)
+        -:  158:        if (this->elements[i] == element)
+        -:  159:            return &this->elements[i];
+        -:  160:    // If the element is not found, return a null pointer
+        -:  161:    return nullptr;
+        -:  162:}
+        -:  163:
+        -:  164:template<typename TypeOfElement>
+        -:  165:void DynamicVector<TypeOfElement>::addElementToPosition(const TypeOfElement &newElement, int position) {
+        -:  166:    if (this->size == this->capacity)
+        -:  167:        this->resize(this->capacity * 2);
+        -:  168:    for (int i = this->size; i > position; i--)
+        -:  169:        this->elements[i] = this->elements[i - 1];
+        -:  170:    this->elements[position] = newElement;
+        -:  171:    this->size++;
+        -:  172:
+        -:  173:}
+        -:  174:
+        -:  175:

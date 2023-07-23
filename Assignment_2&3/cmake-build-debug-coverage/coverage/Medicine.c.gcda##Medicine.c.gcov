@@ -1,0 +1,110 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/Medicine.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Medicine.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/Medicine.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <string.h>
+        -:    3:#include <stdio.h>
+        -:    4:
+        -:    5:#include "Medicine.h"
+        -:    6:
+        -:    7:
+function create_Medicine called 68 returned 100% blocks executed 67%
+       68:    8:Medicine* create_Medicine(char *name, TInt concentration, TInt quantity, TInt price) {
+       68:    9:    Medicine* medicine = malloc(sizeof(Medicine));
+       68:   10:    if (medicine == NULL)
+       68:   10-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 68
+    #####:   11:        return NULL;
+    %%%%%:   11-block  0
+       68:   12:    medicine->name = (char *) malloc((strlen(name) + 1) * sizeof(char));
+       68:   13:    if (medicine->name == NULL) {
+       68:   13-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 68
+    #####:   14:        free(medicine);
+    #####:   15:        return NULL;
+    %%%%%:   15-block  0
+        -:   16:    }
+        -:   17:
+       68:   18:    strcpy(medicine->name, name);
+       68:   19:    medicine->concentration = concentration;
+       68:   20:    medicine->quantity = quantity;
+       68:   21:    medicine->price = price;
+       68:   22:    return medicine;
+       68:   22-block  0
+        -:   23:}
+        -:   24:
+function get_name called 106 returned 100% blocks executed 100%
+      106:   25:char* get_name(Medicine *self) {
+      106:   26:    return self->name;
+      106:   26-block  0
+        -:   27:}
+        -:   28:
+function get_concentration called 51 returned 100% blocks executed 100%
+       51:   29:TInt get_concentration(Medicine *self) {
+       51:   30:    return self->concentration;
+       51:   30-block  0
+        -:   31:}
+        -:   32:
+function get_quantity called 9 returned 100% blocks executed 100%
+        9:   33:TInt get_quantity(Medicine *self) {
+        9:   34:    return self->quantity;
+        9:   34-block  0
+        -:   35:}
+        -:   36:
+function get_price called 3 returned 100% blocks executed 100%
+        3:   37:TInt get_price(Medicine *self) {
+        3:   38:    return self->price;
+        3:   38-block  0
+        -:   39:}
+        -:   40:
+function set_quantity called 4 returned 100% blocks executed 100%
+        4:   41:void set_quantity(Medicine *self, TInt quantityToBeSet) {
+        4:   42:    self->quantity = quantityToBeSet;
+        4:   43:}
+        -:   44:
+function set_price called 4 returned 100% blocks executed 100%
+        4:   45:void set_price(Medicine *self, TInt priceToBeSet) {
+        4:   46:    self->price = priceToBeSet;
+        4:   47:}
+        -:   48:
+function add_quantity called 1 returned 100% blocks executed 100%
+        1:   49:void add_quantity(Medicine *self, TInt quantityToBeAdded) {
+        1:   50:    self->quantity += quantityToBeAdded;
+        1:   51:}
+        -:   52:
+function copy_Medicine called 50 returned 100% blocks executed 100%
+       50:   53:Medicine* copy_Medicine(Medicine *self) {
+       50:   54:    if (self == NULL)
+       50:   54-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 48
+        2:   55:        return NULL;
+        2:   55-block  0
+       48:   56:    Medicine* newMedicine = create_Medicine(self->name, self->concentration, self->quantity, self->price);
+       48:   56-block  0
+call    0 returned 48
+       48:   57:    return newMedicine;
+        -:   58:
+        -:   59:}
+        -:   60:
+function destroy_Medicine called 59 returned 100% blocks executed 100%
+       59:   61:void destroy_Medicine(Medicine* self) {
+       59:   62:    if (self == NULL || self->name == NULL)
+       59:   62-block  0
+branch  0 taken 57 (fallthrough)
+branch  1 taken 2
+       57:   62-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 57
+        2:   63:        return;
+        2:   63-block  0
+       57:   64:    free(self->name);
+        -:   65:    /*// print pointer self
+        -:   66:    printf("self: %p \n", self);*/
+       57:   67:    free(self);
+       57:   68:    self = NULL;
+       57:   68-block  0
+        -:   69:}

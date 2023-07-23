@@ -1,0 +1,29 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/main.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/main.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Tests.h"
+        -:    2:#include "UserInterface.h"
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:
+function main called 1 returned 100% blocks executed 100%
+        1:    7:int main()
+        -:    8:{
+        -:    9:    Tests tests;
+        1:   10:    tests.testAll();
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   11://    RepoShelterDogs repoShelter;
+        -:   12://    RepoAdoptedDogs repoAdopted;
+        -:   13://    ServiceAdmin serviceAdmin(repoShelter);
+        -:   14://    ServiceUser serviceUser(repoShelter, repoAdopted);
+        -:   15://    UserInterface userInterface(serviceAdmin, serviceUser);
+        -:   16://    userInterface.run();
+        1:   17:    return 0;
+        1:   17-block  0
+        -:   18:}
+        -:   19:

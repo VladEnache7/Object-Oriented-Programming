@@ -1,0 +1,20 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/main.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/main.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "UserInterface.h"
+        -:    2:#include "Tests.h"
+        -:    3:
+function main called 1 returned 100% blocks executed 100%
+        1:    4:int main(){
+        1:    5:    test_all();
+        1:    5-block  0
+call    0 returned 1
+        1:    6:    UserInterface* user_interface = create_user_interface();
+call    0 returned 1
+        1:    7:    start_user_interface(user_interface);
+call    0 returned 1
+        1:    8:    destroy_user_interface(user_interface);
+call    0 returned 1
+        1:    9:    return 0;
+        -:   10:}

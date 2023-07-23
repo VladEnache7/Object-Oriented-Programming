@@ -1,0 +1,7 @@
+# ninja log v5
+2	139	7004143439600710	CMakeFiles/a23_912_enache_vlad.dir/main.c.obj	abdaf4e2b37838f2
+190	335	7004143441565619	a23_912_enache_vlad.exe	97a71c76ba783188
+33	182	7004143440031696	CMakeFiles/a23_912_enache_vlad.dir/Repository.c.obj	dcf9e276527dba27
+22	162	7004143439840393	CMakeFiles/a23_912_enache_vlad.dir/Service.c.obj	cb2e1d7025e9174f
+12	155	7004143439763210	CMakeFiles/a23_912_enache_vlad.dir/UserInterface.c.obj	ac71d5a9d5f07075
+65	190	7004143440107116	CMakeFiles/a23_912_enache_vlad.dir/Medicine.c.obj	de4a8688f787dc35

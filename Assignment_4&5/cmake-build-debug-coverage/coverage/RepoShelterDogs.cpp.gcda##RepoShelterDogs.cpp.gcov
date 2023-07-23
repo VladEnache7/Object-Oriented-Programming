@@ -1,0 +1,160 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/RepoShelterDogs.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/RepoShelterDogs.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a45-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a45_912_enache_vlad.dir/RepoShelterDogs.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "RepoShelterDogs.h"
+        -:    2:
+function _ZN15RepoShelterDogsC2Ev called 4 returned 100% blocks executed 60%
+        4:    3:RepoShelterDogs::RepoShelterDogs() {
+        4:    3-block  0
+call    0 returned 4
+    $$$$$:    3-block  1
+call    1 never executed
+        4:    4:    this->dogs = DynamicVector<Dog>();
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:    4-block  0
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:    4-block  1
+call    6 returned 4
+    $$$$$:    4-block  2
+call    7 never executed
+    $$$$$:    4-block  3
+        4:    5:}
+        -:    6:
+function _ZN15RepoShelterDogsD2Ev called 4 returned 100% blocks executed 100%
+        4:    7:RepoShelterDogs::~RepoShelterDogs() = default;
+        4:    7-block  0
+call    0 returned 4
+        -:    8:
+function _ZN15RepoShelterDogs6addDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 8 returned 100% blocks executed 71%
+        8:    9:void RepoShelterDogs::addDog(const std::string &name, const std::string &breed, int age, const std::string &photograph) {
+        8:   10:    this->dogs.addElement(Dog(name, breed, age, photograph));
+        8:   10-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:   10-block  1
+call    4 returned 8
+    $$$$$:   10-block  2
+call    5 never executed
+        8:   11:}
+        -:   12:
+function _ZN15RepoShelterDogs9deleteDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 100%
+        3:   13:void RepoShelterDogs::deleteDog(const std::string &name) {
+        3:   14:    int position = this->getDogPositionByName(name);
+        3:   14-block  0
+call    0 returned 3
+        3:   15:    this->dogs.removeElementFromPosition(position);
+call    0 returned 3
+        3:   16:}
+        -:   17:
+function _ZN15RepoShelterDogs9updateDogERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 2 returned 100% blocks executed 75%
+        2:   18:void RepoShelterDogs::updateDog(const std::string &name, const std::string &newBreed, int newAge, const std::string &newPhotograph) {
+        4:   19:    Dog updatedDog = Dog(name, newBreed, newAge, newPhotograph);
+        2:   19-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   19-block  1
+call    3 returned 2
+    $$$$$:   19-block  2
+call    4 never executed
+        2:   20:    int position = getDogPositionByName(name);
+        2:   20-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   21:    this->dogs.setElement(position, updatedDog);
+        2:   21-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   22:}
+        -:   23:
+function _ZNK15RepoShelterDogs7getDogsEv called 18 returned 100% blocks executed 100%
+       18:   24:DynamicVector<Dog> RepoShelterDogs::getDogs() const {
+       18:   25:    return this->dogs;
+       18:   25-block  0
+call    0 returned 18
+        -:   26:}
+        -:   27:
+function _ZN15RepoShelterDogs14getDogPositionERK3Dog called 3 returned 100% blocks executed 100%
+        3:   28:int RepoShelterDogs::getDogPosition(const Dog &dog) {
+        4:   29:    for (int i = 0; i < this->dogs.getSize(); i++) {
+        3:   29-block  0
+        4:   29-block  1
+call    0 returned 4
+branch  1 taken 3 (fallthrough)
+branch  2 taken 1
+        1:   29-block  2
+        3:   30:        if (this->dogs[i] == dog) {
+        3:   30-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:   31:            return i;
+        2:   31-block  0
+        -:   32:        }
+        -:   33:    }
+        1:   34:    return -1;
+        1:   34-block  0
+        -:   35:}
+        -:   36:
+function _ZN15RepoShelterDogs20getDogPositionByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 14 returned 100% blocks executed 100%
+       14:   37:int RepoShelterDogs::getDogPositionByName(const std::string &name) {
+       16:   38:    for (int i = 0; i < this->dogs.getSize(); i++) {
+       14:   38-block  0
+       16:   38-block  1
+call    0 returned 16
+branch  1 taken 11 (fallthrough)
+branch  2 taken 5
+        2:   38-block  2
+       11:   39:        if (this->dogs[i].getName() == name) {
+       11:   39-block  0
+call    0 returned 11
+call    1 returned 11
+call    2 returned 11
+call    3 returned 11
+branch  4 taken 9 (fallthrough)
+branch  5 taken 2
+        9:   40:            return i;
+        9:   40-block  0
+        -:   41:        }
+        -:   42:    }
+        5:   43:    return -1;
+        5:   43-block  0
+        -:   44:}
+        -:   45:
+function _ZN15RepoShelterDogs12getDogByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 100%
+        2:   46:Dog RepoShelterDogs::getDogByName(const std::string &name) {
+        3:   47:    for (int i = 0; i < this->dogs.getSize(); i++) {
+        2:   47-block  0
+        3:   47-block  1
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        1:   47-block  2
+        2:   48:        if (this->dogs[i].getName() == name) {
+        2:   48-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 1
+        1:   49:            return this->dogs[i];
+        1:   49-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   50:        }
+        -:   51:    }
+        1:   52:    return {};
+        1:   52-block  0
+call    0 returned 1
+        -:   53:}

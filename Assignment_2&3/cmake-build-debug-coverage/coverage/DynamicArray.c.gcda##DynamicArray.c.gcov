@@ -1,0 +1,255 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/DynamicArray.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/DynamicArray.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/DynamicArray.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "DynamicArray.h"
+        -:    2:#include <stdlib.h>
+        -:    3:
+        -:    4:
+        -:    5:
+        -:    6:
+function create_DynamicArray called 20 returned 100% blocks executed 67%
+       20:    7:DynamicArray* create_DynamicArray(int capacity, destructionFunction fct) {
+       20:    8:    DynamicArray* arr = malloc(sizeof(DynamicArray));
+       20:    9:    if (arr == NULL)
+       20:    9-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 20
+    #####:   10:        return NULL;
+    %%%%%:   10-block  0
+       20:   11:    arr->capacity = capacity;
+       20:   12:    arr->size = 0;
+       20:   13:    arr->elems = malloc(capacity * sizeof(TElem));
+       20:   14:    if (arr->elems == NULL)
+       20:   14-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 20
+    #####:   15:        return NULL;
+    %%%%%:   15-block  0
+       20:   16:    arr->destroyFct = fct;
+        -:   17:
+       20:   18:    return arr;
+       20:   18-block  0
+        -:   19:}
+        -:   20:
+function destroy_DynamicArray called 14 returned 100% blocks executed 88%
+       14:   21:void destroy_DynamicArray(DynamicArray* arr)
+        -:   22:{
+       14:   23:    if (arr == NULL)
+       14:   23-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 14
+    #####:   24:        return;
+    %%%%%:   24-block  0
+       49:   25:    for (int i = 0; i < arr->size; i++)
+       14:   25-block  0
+       49:   25-block  1
+branch  0 taken 35
+branch  1 taken 14 (fallthrough)
+       35:   26:        arr->destroyFct(arr->elems[i]);
+       35:   26-block  0
+call    0 returned 35
+       14:   27:    free(arr->elems);
+       14:   28:    free(arr);
+       14:   28-block  0
+        -:   29:}
+        -:   30:
+function resize_DynamicArray called 0 returned 0% blocks executed 0%
+    #####:   31:void resize_DynamicArray(DynamicArray* arr)
+        -:   32:{
+    #####:   33:    if (arr == NULL)
+    %%%%%:   33-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   34:        return;
+    %%%%%:   34-block  0
+        -:   35:    /*int aux_cap = operationStack->capacity * 2;
+        -:   36:    TElem* aux = malloc(aux_cap * sizeof(TElem));
+        -:   37:    if (aux == NULL)
+        -:   38:        return;
+        -:   39:    operationStack->capacity = aux_cap;
+        -:   40:    for (int i = 0; i < operationStack->size; i++)
+        -:   41:        aux[i] = operationStack->elems[i];
+        -:   42:    free(operationStack->elems);
+        -:   43:    operationStack->elems = aux;*/
+    #####:   44:    int aux_cap = arr->capacity * 2;
+    #####:   45:    TElem* aux = realloc(arr->elems, aux_cap * sizeof(TElem));
+    #####:   46:    if (aux == NULL)
+    %%%%%:   46-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   47:        return;
+    %%%%%:   47-block  0
+    #####:   48:    arr->capacity = aux_cap;
+    #####:   49:    arr->elems = aux;
+    %%%%%:   49-block  0
+        -:   50:}
+        -:   51:
+function addElem_DynamicArray called 50 returned 100% blocks executed 67%
+       50:   52:void addElem_DynamicArray(DynamicArray* arr, TElem elem)
+        -:   53:{
+       50:   54:    if (arr == NULL)
+       50:   54-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 50
+    #####:   55:        return;
+    %%%%%:   55-block  0
+       50:   56:    if (arr->size == arr->capacity)
+       50:   56-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 50
+    #####:   57:        resize_DynamicArray(arr);
+    %%%%%:   57-block  0
+call    0 never executed
+       50:   58:    arr->elems[arr->size++] = elem;
+       50:   58-block  0
+        -:   59:}
+        -:   60:
+function removeElem_DynamicArray called 3 returned 100% blocks executed 82%
+        3:   61:void removeElem_DynamicArray(DynamicArray* arr, int position)
+        -:   62:{
+        3:   63:    if (arr == NULL)
+        3:   63-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:   64:        return;
+    %%%%%:   64-block  0
+        3:   65:    if (position < 0 || position >= arr->size)
+        3:   65-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:   65-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 3
+    #####:   66:        return;
+    %%%%%:   66-block  0
+        3:   67:    arr->destroyFct(arr->elems[position]);
+        3:   67-block  0
+call    0 returned 3
+        4:   68:    for (int i = position; i < arr->size - 1; i++)
+        4:   68-block  0
+branch  0 taken 1
+branch  1 taken 3 (fallthrough)
+        1:   69:        arr->elems[i] = arr->elems[i + 1];
+        1:   69-block  0
+        3:   70:    arr->size--;
+        3:   70-block  0
+        -:   71:}
+        -:   72:
+function getSize_DynamicArray called 183 returned 100% blocks executed 75%
+      183:   73:int getSize_DynamicArray(DynamicArray* arr)
+        -:   74:{
+      183:   75:    if (arr == NULL)
+      183:   75-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 183
+    #####:   76:        return -1;
+    %%%%%:   76-block  0
+      183:   77:    return arr->size;
+      183:   77-block  0
+        -:   78:}
+        -:   79:
+function getCapacity_DynamicArray called 0 returned 0% blocks executed 0%
+    #####:   80:int getCapacity_DynamicArray(DynamicArray* arr)
+        -:   81:{
+    #####:   82:    if (arr == NULL)
+    %%%%%:   82-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   83:        return -1;
+    %%%%%:   83-block  0
+    #####:   84:    return arr->capacity;
+    %%%%%:   84-block  0
+        -:   85:}
+        -:   86:
+function getAllElems_DynamicArray called 0 returned 0% blocks executed 0%
+    #####:   87:TElem getAllElems_DynamicArray(DynamicArray* arr)
+        -:   88:{
+    #####:   89:    if (arr == NULL)
+    %%%%%:   89-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   90:        return NULL;
+    %%%%%:   90-block  0
+        -:   91:
+    #####:   92:    return arr->elems;
+    %%%%%:   92-block  0
+        -:   93:}
+        -:   94:
+function getElemFromPosition_DynamicArray called 200 returned 100% blocks executed 75%
+      200:   95:TElem getElemFromPosition_DynamicArray(DynamicArray* arr, long int position)
+        -:   96:{
+      200:   97:    if (arr == NULL)
+      200:   97-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 200
+    #####:   98:        return NULL;
+    %%%%%:   98-block  0
+        -:   99:
+      200:  100:    return arr->elems[position];
+      200:  100-block  0
+        -:  101:}
+        -:  102:
+function sort_DynamicArray called 1 returned 100% blocks executed 83%
+        1:  103:void sort_DynamicArray(DynamicArray* arr, compareFunction cmp){
+        1:  104:    if (arr == NULL)
+        1:  104-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  105:        return;
+    %%%%%:  105-block  0
+        2:  106:    for (int i = 0; i < arr->size - 1; i++)
+        1:  106-block  0
+        1:  106-block  1
+        2:  106-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        2:  107:        for (int j = i + 1; j < arr->size; j++)
+        1:  107-block  0
+        1:  107-block  1
+        2:  107-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  108:            if (cmp(arr->elems[i], arr->elems[j]) > 0)
+        1:  108-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  109:            {
+    #####:  110:                TElem aux = arr->elems[i];
+    #####:  111:                arr->elems[i] = arr->elems[j];
+    #####:  112:                arr->elems[j] = aux;
+    %%%%%:  112-block  0
+        -:  113:            }
+        -:  114:}
+        -:  115:
+        -:  116:/*
+        -:  117:void testDynamicArray()
+        -:  118:{
+        -:  119:    DynamicArray* arr1 = create_DynamicArray(2, (destructionFunction) destroy_Medicine);
+        -:  120:    // arr1 - array of planets
+        -:  121:
+        -:  122:    DynamicArray* p1 = create_Medicine("Paracetamol", 200, 10, 10);
+        -:  123:    DynamicArray* p2 = create_Medicine("Aspirin", 100, 20, 20);
+        -:  124:    DynamicArray* p3 = create_Medicine("Ibuprofen", 300, 30, 30);
+        -:  125:
+        -:  126:    addElem_DynamicArray(arr1, p1);
+        -:  127:    addElem_DynamicArray(arr1, p2);
+        -:  128:    assert(getSize_DynamicArray(arr1) == 2);
+        -:  129:    assert(getCapacity_DynamicArray(arr1) == 2);
+        -:  130:
+        -:  131:    addElem_DynamicArray(arr1, p3);
+        -:  132:    assert(getSize_DynamicArray(arr1) == 3);
+        -:  133:    assert(getCapacity_DynamicArray(arr1) == 4);
+        -:  134:
+        -:  135:    DynamicArray* arr2 = create_DynamicArray(2, (destructionFunction) destroy_Medicine);
+        -:  136:    // arr2 - array of planets
+        -:  137:    DynamicArray* p4 = create_Medicine("Panadol", 400, 40, 40);
+        -:  138:    addElem_DynamicArray(arr2, p4);
+        -:  139:
+        -:  140:    DynamicArray* arrayOfArrays = create_DynamicArray(2, (destructionFunction) destroy_DynamicArray);
+        -:  141:    addElem_DynamicArray(arrayOfArrays, arr1);
+        -:  142:    addElem_DynamicArray(arrayOfArrays, arr2);
+        -:  143:
+        -:  144:    destroy_DynamicArray(arrayOfArrays);
+        -:  145:}*/

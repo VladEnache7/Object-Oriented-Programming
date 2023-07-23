@@ -1,0 +1,2231 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/UserInterface.cpp
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/UserInterface.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a6-912-enache-vlad-1/cmake-build-debug-coverage/CMakeFiles/a6_912_enache_vlad_1.dir/UserInterface.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:
+        -:    3:#include "UserInterface.h"
+        -:    4:#include "Exceptions.h"
+        -:    5:#include "ServiceAdmin.h"
+        -:    6:#include "ServiceUser.h"
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+function _ZN13UserInterfaceC2ER12ServiceAdminR11ServiceUser called 0 returned 0% blocks executed 0%
+    #####:   10:UserInterface::UserInterface(ServiceAdmin &serviceAdminToBeSet, ServiceUser &serviceUserToBeSet) : serviceAdmin{
+    #####:   11:        serviceAdminToBeSet}, serviceUser(serviceUserToBeSet) {}
+        -:   12:
+        -:   13:
+        -:   14:// the default destructor is used because there are no pointers in the class
+function _ZN13UserInterfaceD2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:UserInterface::~UserInterface() = default;
+        -:   16:
+        -:   17:
+function _ZN13UserInterface3runEv called 0 returned 0% blocks executed 0%
+    #####:   18:void UserInterface::run() {
+    #####:   19:    this->chooseMode();
+    %%%%%:   19-block  0
+call    0 never executed
+    #####:   20:}
+        -:   21:
+        -:   22:
+function _ZN13UserInterface14printStartMenuEv called 0 returned 0% blocks executed 0%
+    #####:   23:void UserInterface::printStartMenu() {
+    #####:   24:    cout << "\n---Welcome to “Keep calm and adopt a pet” shelter---" << endl;
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+    #####:   25:    cout << "\t\t1 - Admin Mode" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   26:    cout << "\t\t2 - User Mode" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   27:    cout << "\t\tx - Exit" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   28:    cout << "----------------------------------------------------" << endl;
+call    0 never executed
+call    1 never executed
+        -:   29:
+    #####:   30:}
+        -:   31:
+        -:   32:
+function _ZN13UserInterface10chooseModeEv called 0 returned 0% blocks executed 0%
+    #####:   33:void UserInterface::chooseMode() {
+    #####:   34:    char choice = '0';
+    %%%%%:   34-block  0
+        -:   35:    // while the choice is not x, keep reading commands
+    #####:   36:    while (choice != 'x') {
+    %%%%%:   36-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   36-block  1
+        -:   37:
+        -:   38:        // print the menu
+    #####:   39:        UserInterface::printStartMenu();
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   40:
+        -:   41:        // read the choice
+    #####:   42:        cout << "Your choice: ";
+    %%%%%:   42-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   43:        cin >> choice;
+    %%%%%:   43-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   44:        switch (choice) {
+    %%%%%:   44-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   45:            case '1': /// admin mode
+        -:   46:            {
+    #####:   47:                this->having10DogsAtStartUp();
+    %%%%%:   47-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   48:                this->startAdminMode();
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   49:            }
+    #####:   50:                break;
+    %%%%%:   50-block  0
+    #####:   51:            case '2': /// user mode
+        -:   52:            {
+    #####:   53:                this->having10DogsAtStartUp();
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   54:                this->startUserMode();
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   55:            }
+    #####:   56:                break;
+    %%%%%:   56-block  0
+    #####:   57:            case 'x': /// exit
+    #####:   58:                break;
+    %%%%%:   58-block  0
+    #####:   59:            default:
+    #####:   60:                cout << "Invalid choice! Please try again!" << endl;
+    %%%%%:   60-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   60-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   61:                break;
+    %%%%%:   61-block  0
+        -:   62:        }
+        -:   63:    }
+        -:   64:
+    #####:   65:}
+    %%%%%:   65-block  0
+        -:   66:
+        -:   67:
+function _ZN13UserInterface14printMenuAdminEv called 0 returned 0% blocks executed 0%
+    #####:   68:void UserInterface::printMenuAdmin() {
+    #####:   69:    cout << "\n----------Admin mode------------" << endl;
+    %%%%%:   69-block  0
+call    0 never executed
+call    1 never executed
+    #####:   70:    cout << "\t1 - Add a dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   71:    cout << "\t2 - Delete a dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   72:    cout << "\t3 - Update a dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   73:    cout << "\t4 - List all dogs" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   74:    cout << "\tx - Exit" << endl;
+call    0 never executed
+call    1 never executed
+    #####:   75:    cout << "--------------------------------" << endl;
+call    0 never executed
+call    1 never executed
+        -:   76:
+    #####:   77:}
+        -:   78:
+        -:   79:
+function _ZN13UserInterface14startAdminModeEv called 0 returned 0% blocks executed 0%
+    #####:   80:void UserInterface::startAdminMode() {
+        -:   81:
+    #####:   82:    char choice = '0';
+    %%%%%:   82-block  0
+        -:   83:    // while the choice is not x, keep reading commands
+    #####:   84:    while (choice != 'x') {
+    %%%%%:   84-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   84-block  1
+        -:   85:        // print the menu
+    #####:   86:        this->printMenuAdmin();
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   87:
+        -:   88:        // read the choice
+    #####:   89:        cout << "Your choice: ";
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   90:        cin >> choice;
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   91:        switch (choice) {
+    %%%%%:   91-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   92:            case '1': /// add a dog
+        -:   93:            {
+    #####:   94:                string breed, name, photograph;
+    %%%%%:   94-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   94-block  1
+call    3 never executed
+    $$$$$:   94-block  2
+call    4 never executed
+    $$$$$:   94-block  3
+call    5 never executed
+        -:   95:                int age;
+    #####:   96:                cout << "Name (names are unique): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:                cin >> name;
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   98:                cout << "Breed: ";
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   99:                cin >> breed;
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  100:                string stringAge;
+    %%%%%:  100-block  0
+call    0 never executed
+    $$$$$:  100-block  1
+call    1 never executed
+    #####:  101:                cout << "Age: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  102:                cin >> stringAge;
+    %%%%%:  102-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  103:                if (stringAge.find_first_not_of("0123456789") != std::string::npos) {
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  104:                    cout << "Age must be a positive number!" << endl;
+    %%%%%:  104-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  104-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  105:                    break;
+    %%%%%:  105-block  0
+        -:  106:                }
+    #####:  107:                age = stoi(stringAge);
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  108:                cout << "Photograph: ";
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  109:                cin >> photograph;
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  110:                try {
+    #####:  111:                    this->serviceAdmin.addDog(name, breed, age, photograph);
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  112:                    cout << "Dog added successfully!" << endl;
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  112-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  113:                } catch (Exception &exception) {
+    $$$$$:  113-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  113-block  1
+call    2 never executed
+    $$$$$:  113-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  113-block  3
+call    6 never executed
+    =====:  114:                    cout << exception.what() << endl;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  114-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  115:                }
+        -:  116:
+        -:  117:            }
+    #####:  118:                break;
+    %%%%%:  118-block  0
+    #####:  119:            case '2': /// delete a dog
+        -:  120:            {
+    #####:  121:                string name;
+    %%%%%:  121-block  0
+call    0 never executed
+    %%%%%:  121-block  1
+call    1 never executed
+    $$$$$:  121-block  2
+call    2 never executed
+    #####:  122:                cout << "Name of the dog to be deleted (names are unique): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  123:                cin >> name;
+    %%%%%:  123-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  124:
+        -:  125:                try {
+    #####:  126:                    this->serviceAdmin.deleteDog(name);
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  127:                    cout << "Dog deleted successfully!" << endl;
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  127-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  128:                } catch (Exception &exception) {
+    $$$$$:  128-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  128-block  1
+call    2 never executed
+    $$$$$:  128-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  128-block  3
+call    6 never executed
+    =====:  129:                    cout << exception.what() << endl;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  129-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  130:                }
+        -:  131:
+        -:  132:            }
+    #####:  133:                break;
+    #####:  134:            case '3': /// update a dog
+        -:  135:            {
+    #####:  136:                string newBreed, name, newPhotograph;
+    %%%%%:  136-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  136-block  1
+call    3 never executed
+    $$$$$:  136-block  2
+call    4 never executed
+    $$$$$:  136-block  3
+call    5 never executed
+        -:  137:                int newAge;
+        -:  138:
+        -:  139:                /// getting the name of the dog to be updated
+    #####:  140:                cout << "Name of the dog to be updated (Names are unique): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  141:                cin >> name;
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  142:                if (this->serviceAdmin.getDogPositionByName(name) == -1) {
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  142-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  143:                    cout << "There is no dog with this name! " << endl;
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  143-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  144:                    break;
+    %%%%%:  144-block  0
+        -:  145:                }
+        -:  146:
+        -:  147:                /// getting the new newBreed from the user
+    #####:  148:                cout << "New newBreed (if not, write no): ";
+    %%%%%:  148-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:                cin >> newBreed;
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  150:                if (newBreed == "no")
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  151:                    newBreed = this->serviceAdmin.getDogByName(name).getBreed();
+    %%%%%:  151-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  151-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  151-block  2
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  151-block  3
+call    9 never executed
+    $$$$$:  151-block  4
+        -:  152:
+        -:  153:                /// getting the new newAge from the user
+    #####:  154:                string stringNewAge;
+    %%%%%:  154-block  0
+call    0 never executed
+    $$$$$:  154-block  1
+call    1 never executed
+    #####:  155:                cout << "New Age (if not, write -1): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  156:                cin >> stringNewAge;
+    %%%%%:  156-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  157:                if (stringNewAge.find_first_not_of("-0123456789") != std::string::npos) {
+    %%%%%:  157-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  158:                    cout << "Age must be a positive number!" << endl;
+    %%%%%:  158-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  158-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  159:                    break;
+    %%%%%:  159-block  0
+        -:  160:                }
+    #####:  161:                newAge = stoi(stringNewAge);
+    %%%%%:  161-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  162:                if (newAge == -1)
+    %%%%%:  162-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  163:                    newAge = this->serviceAdmin.getDogByName(name).getAge();
+    %%%%%:  163-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  163-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  163-block  2
+call    6 never executed
+    $$$$$:  163-block  3
+call    7 never executed
+    $$$$$:  163-block  4
+        -:  164:
+        -:  165:                /// getting the new newPhotograph from the user
+    #####:  166:                cout << "New Photograph (if not, write no): ";
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:                cin >> newPhotograph;
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  168:                if (newPhotograph == "no")
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  169:                    newPhotograph = this->serviceAdmin.getDogByName(name).getPhotograph();
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  169-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  169-block  2
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  169-block  3
+call    9 never executed
+    $$$$$:  169-block  4
+        -:  170:
+        -:  171:                try {
+    #####:  172:                    this->serviceAdmin.updateDog(name, newBreed, newAge, newPhotograph);
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  173:                    cout << "Dog updated successfully!" << endl;
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  173-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  174:                } catch (Exception &exception) {
+    $$$$$:  174-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  174-block  1
+call    2 never executed
+    $$$$$:  174-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  174-block  3
+call    6 never executed
+    =====:  175:                    cout << exception.what() << endl;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  175-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  176:                }
+        -:  177:
+        -:  178:            }
+    #####:  179:                break;
+    %%%%%:  179-block  0
+    #####:  180:            case '4': /// list all dogs
+        -:  181:            {
+    #####:  182:                for (int i = 0; i < this->serviceAdmin.getDogs().size(); i++) {
+    %%%%%:  182-block  0
+    %%%%%:  182-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  182-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  183:                    cout << "-----> Dog " << i + 1 << " <-----" << endl;
+    %%%%%:  183-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  183-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  183-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  183-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:  184:                    cout << "Name: " << this->serviceAdmin.getDogs()[i].getName() << endl;
+    %%%%%:  184-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  184-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  184-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  184-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  184-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  184-block  5
+call   16 never executed
+call   17 never executed
+    $$$$$:  184-block  6
+call   18 never executed
+    $$$$$:  184-block  7
+    $$$$$:  184-block  8
+call   19 never executed
+    $$$$$:  184-block  9
+    #####:  185:                    cout << "Breed: " << this->serviceAdmin.getDogs()[i].getBreed() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  185-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  185-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  185-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  185-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  185-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:  185-block  5
+call   18 never executed
+    $$$$$:  185-block  6
+    $$$$$:  185-block  7
+call   19 never executed
+    $$$$$:  185-block  8
+    #####:  186:                    cout << "Age: " << this->serviceAdmin.getDogs()[i].getAge() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  186-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  186-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  186-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  186-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  186-block  4
+call   16 never executed
+    $$$$$:  186-block  5
+call   17 never executed
+    $$$$$:  186-block  6
+    #####:  187:                    cout << "Photo: " << this->serviceAdmin.getDogs()[i].getPhotograph() << endl << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  187-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  187-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  187-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  187-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  187-block  4
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  187-block  5
+call   19 never executed
+call   20 never executed
+    $$$$$:  187-block  6
+call   21 never executed
+    $$$$$:  187-block  7
+    $$$$$:  187-block  8
+call   22 never executed
+    $$$$$:  187-block  9
+        -:  188:                }
+        -:  189:            }
+    #####:  190:                break;
+    %%%%%:  190-block  0
+    #####:  191:            case 'x': /// exit
+    #####:  192:                goto chooseModeAgain;
+    %%%%%:  192-block  0
+    #####:  193:            default:
+    #####:  194:                cout << "Invalid choice! Please try again!" << endl;
+    %%%%%:  194-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  194-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  195:                break;
+    %%%%%:  195-block  0
+        -:  196:
+        -:  197:        }
+        -:  198:    }
+    #####:  199:    chooseModeAgain:
+    %%%%%:  199-block  0
+    #####:  200:    cout << "You have exited the admin mode!" << endl;
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  200-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  201:}
+    %%%%%:  201-block  0
+        -:  202:
+        -:  203:
+function _ZN13UserInterface13printMenuUserEv called 0 returned 0% blocks executed 0%
+    #####:  204:void UserInterface::printMenuUser() {
+    #####:  205:    cout << "\n-----------------User-mode-------------------" << endl;
+    %%%%%:  205-block  0
+call    0 never executed
+call    1 never executed
+    #####:  206:    cout << "\t1 - See the current dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  207:    cout << "\t2 - Adopt the current dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  208:    cout << "\t3 - Go to the next dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  209:    cout << "\t4 - See what dogs you've adopted already" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  210:    cout << "\t5 - See the dogs of a breed and age < number" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  211:    cout << "\tx - Exit" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  212:    cout << "----------------------------------------------" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  213:}
+        -:  214:
+        -:  215:
+function _ZN13UserInterface24printMenuFilteredDogListEv called 0 returned 0% blocks executed 0%
+    #####:  216:void UserInterface::printMenuFilteredDogList() {
+    #####:  217:    cout << "\n----------Filtered Dog List------------" << endl;
+    %%%%%:  217-block  0
+call    0 never executed
+call    1 never executed
+    #####:  218:    cout << "\t2 - Adopt the current dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  219:    cout << "\t3 - Go to the next dog" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  220:    cout << "\t4 - See what dogs you've adopted already" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  221:    cout << "\tx - Exit this functionality" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  222:    cout << "----------------------------------------" << endl;
+call    0 never executed
+call    1 never executed
+    #####:  223:}
+        -:  224:
+        -:  225:
+function _ZN13UserInterface13startUserModeEv called 0 returned 0% blocks executed 0%
+    #####:  226:void UserInterface::startUserMode() {
+        -:  227:
+        -:  228:
+    #####:  229:    char choice = '0';
+    %%%%%:  229-block  0
+        -:  230:    // while the choice is not x, keep reading commands
+    #####:  231:    while (choice != 'x') {
+    %%%%%:  231-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  231-block  1
+        -:  232:        // print the menu
+    #####:  233:        this->printMenuUser();
+    %%%%%:  233-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  234:
+        -:  235:        // read the choice
+    #####:  236:        cout << "Your choice: ";
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  237:        cin >> choice;
+    %%%%%:  237-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  238:        switch (choice) {
+    %%%%%:  238-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  239:            case '1': /// see the dogs one by one
+        -:  240:            {
+    #####:  241:                if (this->serviceUser.getDogsShelter().empty()) {
+    %%%%%:  241-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  241-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  242:                    cout << "There are no dogs left in our shelter!" << endl;
+    %%%%%:  242-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  242-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  243:                    break;
+    %%%%%:  243-block  0
+        -:  244:                }
+        -:  245:                // get the current dog
+    #####:  246:                Dog currentDog = this->serviceUser.getCurrentDog();
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  246-block  1
+call    3 never executed
+        -:  247:
+        -:  248:                // print the current dog
+    #####:  249:                cout << "----Current Dog---- " << endl;
+    %%%%%:  249-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  249-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  250:                cout << "Name: " << currentDog.getName() << endl;
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  250-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  250-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  250-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  250-block  4
+call   12 never executed
+    $$$$$:  250-block  5
+call   13 never executed
+    $$$$$:  250-block  6
+    #####:  251:                cout << "Breed: " << currentDog.getBreed() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  251-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  251-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  251-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  251-block  3
+call   12 never executed
+    $$$$$:  251-block  4
+call   13 never executed
+    $$$$$:  251-block  5
+    #####:  252:                cout << "Age: " << currentDog.getAge() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  252-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  252-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  252-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:  253:                cout << "Photo: " << currentDog.getPhotograph() << endl << endl;
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  253-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  253-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  253-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  253-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  253-block  5
+call   15 never executed
+call   16 never executed
+    $$$$$:  253-block  6
+call   17 never executed
+    $$$$$:  253-block  7
+        -:  254:            }
+    #####:  255:                break;
+    #####:  256:            case '2': /// adopt the current dog
+        -:  257:            {
+    #####:  258:                if (this->serviceUser.getDogsShelter().empty()) {
+    %%%%%:  258-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  258-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  259:                    cout << "There are no dogs left in our shelter!" << endl;
+    %%%%%:  259-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  259-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  260:                    break;
+    %%%%%:  260-block  0
+        -:  261:                }
+    #####:  262:                this->serviceUser.adoptDog(this->serviceUser.getCurrentDog());
+    %%%%%:  262-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  262-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  262-block  2
+call    6 never executed
+    $$$$$:  262-block  3
+call    7 never executed
+    $$$$$:  262-block  4
+    #####:  263:                cout << "Dog adopted successfully!" << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  263-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  264:            }
+    #####:  265:                break;
+    %%%%%:  265-block  0
+    #####:  266:            case '3': /// go to the next dog
+        -:  267:            {
+    #####:  268:                if (this->serviceUser.getDogsShelter().empty()) {
+    %%%%%:  268-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  268-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  269:                    cout << "There are no dogs left in our shelter!" << endl;
+    %%%%%:  269-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  269-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  270:                    break;
+    %%%%%:  270-block  0
+        -:  271:                }
+    #####:  272:                this->serviceUser.goToTheNextDog();
+    %%%%%:  272-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  273:            }
+    #####:  274:                break;
+    %%%%%:  274-block  0
+    #####:  275:            case '4': /// see what dogs you've adopted already
+        -:  276:            {
+    #####:  277:                if (this->serviceUser.getDogsAdopted().empty()) {
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  277-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  278:                    cout << "You haven't adopted any dogs yet!" << endl;
+    %%%%%:  278-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  278-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  279:                    break;
+    %%%%%:  279-block  0
+        -:  280:                }
+    #####:  281:                cout << "---You've adopted the following dogs: ---" << endl;
+    %%%%%:  281-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  281-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  282:                for (int i = 0; i < this->serviceUser.getDogsAdopted().size(); i++) {
+    %%%%%:  282-block  0
+    %%%%%:  282-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  282-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  283:                    cout << "-----> Dog " << i + 1 << "<-----" << endl;
+    %%%%%:  283-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  283-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  283-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  283-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:  284:                    cout << "Name: " << this->serviceUser.getDogsAdopted()[i].getName() << endl;
+    %%%%%:  284-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  284-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  284-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  284-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  284-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  284-block  5
+call   16 never executed
+call   17 never executed
+    $$$$$:  284-block  6
+call   18 never executed
+    $$$$$:  284-block  7
+    $$$$$:  284-block  8
+call   19 never executed
+    $$$$$:  284-block  9
+    #####:  285:                    cout << "Breed: " << this->serviceUser.getDogsAdopted()[i].getBreed() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  285-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  285-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  285-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  285-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  285-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:  285-block  5
+call   18 never executed
+    $$$$$:  285-block  6
+    $$$$$:  285-block  7
+call   19 never executed
+    $$$$$:  285-block  8
+    #####:  286:                    cout << "Age: " << this->serviceUser.getDogsAdopted()[i].getAge() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  286-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  286-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  286-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  286-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  286-block  4
+call   16 never executed
+    $$$$$:  286-block  5
+call   17 never executed
+    $$$$$:  286-block  6
+    #####:  287:                    cout << "Photo: " << this->serviceUser.getDogsAdopted()[i].getPhotograph() << endl << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  287-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  287-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  287-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  287-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  287-block  4
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  287-block  5
+call   19 never executed
+call   20 never executed
+    $$$$$:  287-block  6
+call   21 never executed
+    $$$$$:  287-block  7
+    $$$$$:  287-block  8
+call   22 never executed
+    $$$$$:  287-block  9
+        -:  288:                }
+        -:  289:            }
+    #####:  290:                break;
+    %%%%%:  290-block  0
+    #####:  291:            case '5': /// see the dogs of a breed and age < number
+        -:  292:            {
+    #####:  293:                string breed;
+    %%%%%:  293-block  0
+call    0 never executed
+    $$$$$:  293-block  1
+call    1 never executed
+        -:  294:                int age;
+    #####:  295:                cout << "Breed (if not, write 'no'): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  296:                cin >> breed;
+    %%%%%:  296-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  297:                if (breed == "no")
+    %%%%%:  297-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  298:                    breed = "";
+    %%%%%:  298-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:                string stringAge;
+    %%%%%:  299-block  0
+call    0 never executed
+    $$$$$:  299-block  1
+call    1 never executed
+    #####:  300:                cout << "Age: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  301:                cin >> stringAge;
+    %%%%%:  301-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  302:                if (stringAge.find_first_not_of("0123456789") != std::string::npos) {
+    %%%%%:  302-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  303:                    cout << "Age must be a positive number!" << endl;
+    %%%%%:  303-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  303-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  304:                    break;
+    %%%%%:  304-block  0
+        -:  305:                }
+    #####:  306:                age = stoi(stringAge);
+    %%%%%:  306-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  307:                std::vector<Dog> filteredDogs = this->serviceUser.getDogsFiltered(breed, age);
+    %%%%%:  307-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  307-block  1
+call    3 never executed
+    #####:  308:                if (filteredDogs.empty()) {
+    %%%%%:  308-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  309:                    cout << "There are no Dogs with this breed and younger than " << age << endl;
+    %%%%%:  309-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  309-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  309-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  310:                    break;
+    %%%%%:  310-block  0
+        -:  311:                }
+    #####:  312:                int index = 0;
+    %%%%%:  312-block  0
+    #####:  313:                while (index < filteredDogs.size()) {
+    %%%%%:  313-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  313-block  1
+    #####:  314:                    cout << "-----> Dog " << index + 1 << " <-----" << endl;
+    %%%%%:  314-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  314-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  314-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  314-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:  315:                    cout << "Name: " << filteredDogs[index].getName() << endl;
+    %%%%%:  315-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  315-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  315-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  315-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  315-block  4
+call   13 never executed
+    $$$$$:  315-block  5
+call   14 never executed
+    $$$$$:  315-block  6
+    #####:  316:                    cout << "Breed: " << filteredDogs[index].getBreed() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  316-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  316-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  316-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  316-block  3
+call   13 never executed
+    $$$$$:  316-block  4
+call   14 never executed
+    $$$$$:  316-block  5
+    #####:  317:                    cout << "Age: " << filteredDogs[index].getAge() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  317-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  317-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  317-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    #####:  318:                    cout << "Photo: " << filteredDogs[index].getPhotograph() << endl << endl;
+    %%%%%:  318-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  318-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  318-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  318-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  318-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  318-block  5
+call   16 never executed
+    $$$$$:  318-block  6
+call   17 never executed
+    $$$$$:  318-block  7
+    #####:  319:                    printMenuFilteredDogList();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  320:                    char choice2 = '0';
+    %%%%%:  320-block  0
+    #####:  321:                    while (choice2 != 'x') {
+    %%%%%:  321-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  321-block  1
+    #####:  322:                        cout << "Your choice: ";
+    %%%%%:  322-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  323:                        cin >> choice2;
+    %%%%%:  323-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  324:                        switch (choice2) {
+    %%%%%:  324-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  325:                            case '2': /// adopt the current dog
+        -:  326:                            {
+    #####:  327:                                if (this->serviceUser.getDogsShelter().empty()) {
+    %%%%%:  327-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  327-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  328:                                    cout << "There are no dogs left in our shelter!" << endl;
+    %%%%%:  328-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  328-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  329:                                    break;
+    %%%%%:  329-block  0
+        -:  330:                                }
+    #####:  331:                                Dog currentDog = filteredDogs[index];
+    %%%%%:  331-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  331-block  1
+call    4 never executed
+    #####:  332:                                this->serviceUser.adoptDog(currentDog.getName());
+    %%%%%:  332-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  332-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  332-block  2
+call    6 never executed
+    $$$$$:  332-block  3
+call    7 never executed
+    $$$$$:  332-block  4
+        -:  333:
+        -:  334:                                // removing the dog from the filtered list
+    #####:  335:                                filteredDogs.erase(filteredDogs.begin() + index);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  335-block  0
+    $$$$$:  335-block  1
+    $$$$$:  335-block  2
+    #####:  336:                                cout << "Dog adopted successfully!" << endl;
+    %%%%%:  336-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  336-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  337:                                if (filteredDogs.empty()) {
+    %%%%%:  337-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  338:                                    cout << "There are no more dogs left!" << endl;
+    %%%%%:  338-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  338-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  339:                                    goto outOfThisFunctionality;
+    %%%%%:  339-block  0
+        -:  340:                                }
+    #####:  341:                                index = (index + 1) % filteredDogs.size();
+    %%%%%:  341-block  0
+call    0 never executed
+    #####:  342:                                choice2 = 'x';
+        -:  343:                            }
+    #####:  344:                                break;
+    %%%%%:  344-block  0
+    #####:  345:                            case '3': /// go to the next dog
+    #####:  346:                                index = (index + 1) % filteredDogs.size();
+    %%%%%:  346-block  0
+call    0 never executed
+    #####:  347:                                choice2 = 'x';
+    #####:  348:                                break;
+    #####:  349:                            case '4': /// see what dogs you've adopted already
+        -:  350:                            {
+    #####:  351:                                if (this->serviceUser.getDogsAdopted().empty()) {
+    %%%%%:  351-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  351-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  352:                                    cout << "You haven't adopted any dogs yet!" << endl;
+    %%%%%:  352-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  352-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  353:                                    break;
+    %%%%%:  353-block  0
+        -:  354:                                }
+    #####:  355:                                cout << "---You've adopted the following dogs: ---" << endl;
+    %%%%%:  355-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  355-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  356:                                for (int i = 0; i < this->serviceUser.getDogsAdopted().size(); i++) {
+    %%%%%:  356-block  0
+    %%%%%:  356-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  356-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  356-block  3
+    #####:  357:                                    cout << "Dog " << i + 1 << ":" << endl;
+    %%%%%:  357-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  357-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  357-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  357-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:  358:                                    cout << "Name: " << this->serviceUser.getDogsAdopted()[i].getName() << endl;
+    %%%%%:  358-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  358-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  358-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  358-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  358-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  358-block  5
+call   16 never executed
+call   17 never executed
+    $$$$$:  358-block  6
+call   18 never executed
+    $$$$$:  358-block  7
+    $$$$$:  358-block  8
+call   19 never executed
+    $$$$$:  358-block  9
+    #####:  359:                                    cout << "Breed: " << this->serviceUser.getDogsAdopted()[i].getBreed() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  359-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  359-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  359-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  359-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  359-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:  359-block  5
+call   18 never executed
+    $$$$$:  359-block  6
+    $$$$$:  359-block  7
+call   19 never executed
+    $$$$$:  359-block  8
+    #####:  360:                                    cout << "Age: " << this->serviceUser.getDogsAdopted()[i].getAge() << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  360-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  360-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  360-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  360-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  360-block  4
+call   16 never executed
+    $$$$$:  360-block  5
+call   17 never executed
+    $$$$$:  360-block  6
+    #####:  361:                                    cout << "Photo: " << this->serviceUser.getDogsAdopted()[i].getPhotograph() << endl
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  361-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  361-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  361-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  361-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  361-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:  361-block  5
+call   18 never executed
+    $$$$$:  361-block  6
+    $$$$$:  361-block  7
+call   19 never executed
+    $$$$$:  361-block  8
+    #####:  362:                                         << endl;
+    %%%%%:  362-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  363:                                    cout << "\t-------------------------" << endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  363-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  364:                                }
+    #####:  365:                                cout << "-----------------------------------------" << endl;
+    %%%%%:  365-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  365-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  366:                            }
+    #####:  367:                                break;
+    %%%%%:  367-block  0
+    #####:  368:                            case 'x':
+    #####:  369:                                goto outOfThisFunctionality;
+    %%%%%:  369-block  0
+    #####:  370:                            default:
+    #####:  371:                                cout << "Invalid choice! Please try again!" << endl;
+    %%%%%:  371-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  371-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  372:                                break;
+    %%%%%:  372-block  0
+        -:  373:                        }
+        -:  374:                    }
+        -:  375:                }
+        -:  376:
+        -:  377:            }
+    #####:  378:                outOfThisFunctionality:
+    #####:  379:                break;
+    %%%%%:  379-block  0
+    #####:  380:            default:
+    #####:  381:                cout << "Invalid choice! Please try again!" << endl;
+    %%%%%:  381-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  381-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  382:                break;
+    %%%%%:  382-block  0
+        -:  383:        }
+        -:  384:    }
+    #####:  385:    cout << "Thank you for using our application!" << endl;
+    %%%%%:  385-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  385-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  386:}
+    %%%%%:  386-block  0
+        -:  387:
+        -:  388:
+function _ZN13UserInterface21having10DogsAtStartUpEv called 0 returned 0% blocks executed 0%
+    #####:  389:void UserInterface::having10DogsAtStartUp(){
+        -:  390:    // having 10 dogs in the repository
+    #####:  391:    if(this->serviceAdmin.getDogs().empty())
+    %%%%%:  391-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  392:    {
+    #####:  393:        this->serviceAdmin.addDog("Rex", "Labrador Retriever", 3,
+    %%%%%:  393-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  394:                                  "https://ro.wikipedia.org/wiki/Labrador_Retriever#/media/Fi%C8%99ier:YellowLabradorLooking.jpg");
+    %%%%%:  394-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  394-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  394-block  2
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  394-block  3
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  394-block  4
+call   18 never executed
+    $$$$$:  394-block  5
+    $$$$$:  394-block  6
+call   19 never executed
+    $$$$$:  394-block  7
+    $$$$$:  394-block  8
+call   20 never executed
+    $$$$$:  394-block  9
+    #####:  395:        this->serviceAdmin.addDog("Bella", "German Shepherd", 6,
+    %%%%%:  395-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  396:                                  "https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  396-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  396-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  396-block  2
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  396-block  3
+call   18 never executed
+    $$$$$:  396-block  4
+    $$$$$:  396-block  5
+call   19 never executed
+    $$$$$:  396-block  6
+    $$$$$:  396-block  7
+call   20 never executed
+    $$$$$:  396-block  8
+    #####:  397:        this->serviceAdmin.addDog("Max", "Golden Retriever", 2,
+    %%%%%:  397-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  398:                                  "https://en.wikipedia.org/wiki/File:Golden_Retriever_Carlos_%2810581910556%29.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  398-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  398-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  398-block  2
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  398-block  3
+call   18 never executed
+    $$$$$:  398-block  4
+    $$$$$:  398-block  5
+call   19 never executed
+    $$$$$:  398-block  6
+    $$$$$:  398-block  7
+call   20 never executed
+    $$$$$:  398-block  8
+    #####:  399:        this->serviceAdmin.addDog("Charlie", "Bulldog", 4, "https://en.wikipedia.org/wiki/File:English_Bulldog.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  399-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  399-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  399-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  399-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:  399-block  4
+call   21 never executed
+    $$$$$:  399-block  5
+    $$$$$:  399-block  6
+call   22 never executed
+    $$$$$:  399-block  7
+    $$$$$:  399-block  8
+call   23 never executed
+    $$$$$:  399-block  9
+    #####:  400:        this->serviceAdmin.addDog("Lucy", "Beagle", 1, "https://en.wikipedia.org/wiki/File:Beagle.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  400-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  400-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  400-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  400-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:  400-block  4
+call   21 never executed
+    $$$$$:  400-block  5
+    $$$$$:  400-block  6
+call   22 never executed
+    $$$$$:  400-block  7
+    $$$$$:  400-block  8
+call   23 never executed
+    $$$$$:  400-block  9
+    #####:  401:        this->serviceAdmin.addDog("Molly", "Poodle", 5, "https://en.wikipedia.org/wiki/File:Toy_Poodle.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  401-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  401-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  401-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  401-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:  401-block  4
+call   21 never executed
+    $$$$$:  401-block  5
+    $$$$$:  401-block  6
+call   22 never executed
+    $$$$$:  401-block  7
+    $$$$$:  401-block  8
+call   23 never executed
+    $$$$$:  401-block  9
+    #####:  402:        this->serviceAdmin.addDog("Daisy", "Chihuahua", 3,
+    %%%%%:  402-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  403:                                  "https://en.wikipedia.org/wiki/File:Chihuahua_(4479047538).jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  403-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  403-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  403-block  2
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  403-block  3
+call   18 never executed
+    $$$$$:  403-block  4
+    $$$$$:  403-block  5
+call   19 never executed
+    $$$$$:  403-block  6
+    $$$$$:  403-block  7
+call   20 never executed
+    $$$$$:  403-block  8
+    #####:  404:        this->serviceAdmin.addDog("Rocky", "Pug", 2, "https://en.wikipedia.org/wiki/File:Pug_dog.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  404-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  404-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  404-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  404-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:  404-block  4
+call   21 never executed
+    $$$$$:  404-block  5
+    $$$$$:  404-block  6
+call   22 never executed
+    $$$$$:  404-block  7
+    $$$$$:  404-block  8
+call   23 never executed
+    $$$$$:  404-block  9
+    #####:  405:        this->serviceAdmin.addDog("Buddy", "Boxer", 4, "https://en.wikipedia.org/wiki/File:Boxer_(dog).jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  405-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  405-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  405-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  405-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:  405-block  4
+call   21 never executed
+    $$$$$:  405-block  5
+    $$$$$:  405-block  6
+call   22 never executed
+    $$$$$:  405-block  7
+    $$$$$:  405-block  8
+call   23 never executed
+    $$$$$:  405-block  9
+    #####:  406:        this->serviceAdmin.addDog("Maggie", "Siberian Husky", 1,
+    %%%%%:  406-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  407:                                  "https://en.wikipedia.org/wiki/File:Siberian_Husky.jpg");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  407-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  407-block  1
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  407-block  2
+call   12 never executed
+call   13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    $$$$$:  407-block  3
+call   18 never executed
+    $$$$$:  407-block  4
+    $$$$$:  407-block  5
+call   19 never executed
+    $$$$$:  407-block  6
+    $$$$$:  407-block  7
+call   20 never executed
+    $$$$$:  407-block  8
+        -:  408:    }
+    #####:  409:}
+    %%%%%:  409-block  0
+        -:  410:
+        -:  411:
+        -:  412:
+        -:  413:
+        -:  414:

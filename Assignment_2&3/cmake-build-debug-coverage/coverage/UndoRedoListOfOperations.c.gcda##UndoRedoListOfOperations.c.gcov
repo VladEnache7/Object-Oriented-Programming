@@ -1,0 +1,178 @@
+        -:    0:Source:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/UndoRedoListOfOperations.c
+        -:    0:Graph:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/UndoRedoListOfOperations.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/Documents/GitHub/a23-912-enache-vlad/cmake-build-debug-coverage/CMakeFiles/a23_912_enache_vlad.dir/UndoRedoListOfOperations.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include "UndoRedoListOfOperations.h"
+        -:    3:#include "Service.h"
+        -:    4://#include "DynamicArray.h"
+        -:    5://--------------------Operation------------------------
+function createOperation called 25 returned 100% blocks executed 83%
+       25:    6:Operation *createOperation(undoRedoFct undo, undoRedoFct redo, Medicine *medicineToUndo, Medicine *medicineToRedo)
+        -:    7:{
+       25:    8:    Operation* operation = malloc(sizeof(Operation));
+       25:    9:    if (operation == NULL)
+       25:    9-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 25
+    #####:   10:        return NULL;
+    %%%%%:   10-block  0
+       25:   11:    operation->medicineToUndo = copy_Medicine(medicineToUndo);
+       25:   11-block  0
+call    0 returned 25
+       25:   12:    operation->medicineToRedo = copy_Medicine(medicineToRedo);
+call    0 returned 25
+       25:   13:    operation->undoFunction = undo;
+       25:   14:    operation->redoFunction = redo;
+       25:   15:    return operation;
+        -:   16:}
+        -:   17:
+function destroyOperation called 21 returned 100% blocks executed 83%
+       21:   18:void destroyOperation(Operation* operation)
+        -:   19:{
+       21:   20:    if (operation == NULL)
+       21:   20-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 21
+    #####:   21:        return;
+    %%%%%:   21-block  0
+       21:   22:    destroy_Medicine(operation->medicineToUndo);
+       21:   22-block  0
+call    0 returned 21
+       21:   23:    destroy_Medicine(operation->medicineToRedo);
+call    0 returned 21
+       21:   24:    free(operation);
+        -:   25:}
+        -:   26:
+        -:   27://--------------------UndoRedoService------------------------
+        -:   28:
+function create_undoRedoService called 9 returned 100% blocks executed 80%
+        9:   29:UndoRedoService *create_undoRedoService() {
+        9:   30:    UndoRedoService *s = NULL;
+        9:   31:    s = malloc(sizeof(UndoRedoService));
+        9:   32:    if (s == NULL)
+        9:   32-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 9
+    #####:   33:        return s;
+    %%%%%:   33-block  0
+        9:   34:    s->operationStack = create_DynamicArray(20, (destructionFunction) destroyOperation);
+        9:   34-block  0
+call    0 returned 9
+        9:   35:    return s;
+        -:   36:}
+        -:   37:
+function destroy_undoRedoService called 7 returned 100% blocks executed 80%
+        7:   38:void destroy_undoRedoService(UndoRedoService *service) {
+        7:   39:    if (service == NULL)
+        7:   39-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    #####:   40:        return;
+    %%%%%:   40-block  0
+        7:   41:    destroy_DynamicArray(service->operationStack);
+        7:   41-block  0
+call    0 returned 7
+        7:   42:    free(service);
+        -:   43:}
+        -:   44:
+function push_undoRedoService called 25 returned 100% blocks executed 67%
+       25:   45:void push_undoRedoService(UndoRedoService *s, Operation *operation) {
+       25:   46:    if (s == NULL)
+       25:   46-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 25
+    #####:   47:        return;
+    %%%%%:   47-block  0
+        -:   48:    // delete the elements after the current index
+       25:   49:    while (getSize_DynamicArray(s->operationStack) > s->index)
+       25:   49-block  0
+       25:   49-block  1
+call    0 returned 25
+branch  1 taken 0
+branch  2 taken 25 (fallthrough)
+    #####:   50:        removeElem_DynamicArray(s->operationStack, getSize_DynamicArray(s->operationStack) - 1);
+    %%%%%:   50-block  0
+call    0 never executed
+call    1 never executed
+       25:   51:    s->index++;
+       25:   52:    addElem_DynamicArray(s->operationStack, operation);
+       25:   52-block  0
+call    0 returned 25
+        -:   53:}
+        -:   54:
+function isEmpty called 2 returned 100% blocks executed 80%
+        2:   55:int isEmpty(UndoRedoService *s) {
+        2:   56:    if (s == NULL)
+        2:   56-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:   57:        return 1;
+    %%%%%:   57-block  0
+        2:   58:    return (getSize_DynamicArray(s->operationStack) == 0);
+        2:   58-block  0
+call    0 returned 2
+        -:   59:}
+        -:   60:
+function undo called 2 returned 100% blocks executed 85%
+        2:   61:int undo(Service *service){
+        2:   62:    if (service == NULL)
+        2:   62-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:   63:        return 0;
+    %%%%%:   63-block  0
+        2:   64:    if (isEmpty(service->undoRedoService))
+        2:   64-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:   65:        return 0;
+    %%%%%:   65-block  0
+        2:   66:    Operation* operation = getElemFromPosition_DynamicArray(service->undoRedoService->operationStack, service->undoRedoService->index - 1);
+        2:   66-block  0
+call    0 returned 2
+        2:   67:    operation->undoFunction(service->repository, get_name(operation->medicineToUndo), get_concentration(operation->medicineToUndo), get_quantity(operation->medicineToUndo), get_price(operation->medicineToUndo));
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+        2:   68:    service->undoRedoService->index--;
+        2:   69:    return 1;
+        -:   70:}
+        -:   71:
+function redo called 1 returned 100% blocks executed 85%
+        1:   72:int redo(Service *service){
+        1:   73:    if (service == NULL)
+        1:   73-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:   74:        return 0;
+    %%%%%:   74-block  0
+        1:   75:    if (service->undoRedoService->index == getSize_DynamicArray(service->undoRedoService->operationStack))
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    #####:   76:        return 0;
+    %%%%%:   76-block  0
+        1:   77:    Operation* operation = getElemFromPosition_DynamicArray(service->undoRedoService->operationStack, service->undoRedoService->index);
+        1:   77-block  0
+call    0 returned 1
+        1:   78:    operation->redoFunction(service->repository, get_name(operation->medicineToRedo), get_concentration(operation->medicineToRedo), get_quantity(operation->medicineToRedo), get_price(operation->medicineToRedo));
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+        1:   79:    service->undoRedoService->index++;
+        1:   80:    return 1;
+        -:   81:}
+        -:   82:
+        -:   83:/*
+        -:   84:int getIndex(UndoRedoService *service){
+        -:   85:    if (service == NULL)
+        -:   86:        return -1;
+        -:   87:    return service->index;
+        -:   88:}*/

@@ -1,0 +1,20 @@
+Bella
+German Shepherd
+6
+https://en.wikipedia.org/wiki/File:German_Shepherd_-_DSC_0346_(10096362833).jpg
+name
+breed
+5
+photo
+Rocky
+Pug
+2
+https://en.wikipedia.org/wiki/File:Pug_dog.jpg
+Buddy
+Boxer
+4
+https://en.wikipedia.org/wiki/File:Boxer_(dog).jpg
+Buddy
+Boxer
+4
+https://en.wikipedia.org/wiki/File:Boxer_(dog).jpg
